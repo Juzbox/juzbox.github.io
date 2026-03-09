@@ -1096,7 +1096,8 @@ body.lightbox-open nav {
   text-align: right;
 }
 
-
+#mobile-nav-bar { display: none; }
+#mobile-nav-overlay { display: none; }
 
 
 /* ============================================
@@ -1109,6 +1110,9 @@ body.lightbox-open nav {
     --font-size-h2: 1.8rem;
     --font-size-sm: 1rem;
   }
+
+    #desktop-nav { display: none; }
+  #mobile-nav-bar { display: flex; }
 
   /* Nav */
   nav { padding: 0.4rem 1rem; }
