@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CONVIVIAL CITY</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body class="">
+  <nav>
+  <ul id="desktop-nav">
+    <li><a href="/">Hugo Pilate</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/writing/">Writing</a></li>
+    <li><a href="/teaching/">Teaching & Exhibits</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div id="mobile-nav-bar">
+    <a href="/" class="mobile-nav-logo">Hugo Pilate</a>
+    <button id="mobile-nav-toggle">+</button>
+  </div>
+</nav>
+
+<div id="mobile-nav-overlay">
+  <button id="mobile-nav-close">×</button>
+  <ul>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/writing/">Writing</a></li>
+    <li><a href="/teaching/">Teaching & Exhibits</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+</div>
+  
+  <div class="content-wrapper">
+    <div class="project">
+  <aside class="project-meta">
+    <h1>CONVIVIAL CITY</h1>
+    <p>A workshop on the future of Eindhoven&#39;s Gasfabriek facilitated through the use of virtual collaging tools.</p>
+    <ul id="toc-list"></ul>
+
+  </aside>
+
+  <div class="project-content">
+    <h1>How can values like conviviality be used to anchor the imagination of hopeful futures?</h1>
+<p><div class="content-slideshow">
+  <div class="content-slide active">
+    <img src="/assets/img/Scenario1.gif" alt="Scenario1.gif" />
+  </div>
+<div class="content-slide ">
+    <img src="/assets/img/Scenario2.png" alt="Scenario2.png" />
+  </div>
+<div class="content-slide ">
+    <img src="/assets/img/Scenario3.gif" alt="Scenario3.gif" />
+  </div>
+  <a class="content-prev">&#10094;</a>
+  <a class="content-next">&#10095;</a>
+  <div class="content-dots"><div class="content-dot active" data-index="0"></div><div class="content-dot " data-index="1"></div><div class="content-dot " data-index="2"></div></div>
+</div></p>
+<h2>Overview</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/assets/img/team001.gif" alt="team001.gif" /></td>
+<td>On December 10th and 22nd of 2022, a dozen of Eindhoven residents got together at Stadslab to ask themselves: What does it take for a neighborhood to be convivial?<br><br>Using the NRE neighborhood as their starting point where the (Stadslab is located), they imagined three scenarios exploring how the neighborhood might have to adapt to remain a “convivial” place in the face of the city’s transformation.<br><br>The NRE offers a unique location and community to explore the question, located on the edge of the city center, between the canal and the river Dommel, a unique piece of Eindhoven opens up. Adventurous residents and creative entrepreneurs are building this place together.<br><br>Old industry is making way for new energy.<br><br></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img src="/assets/img/NRE_booklet.png" alt="NRE_booklet.png" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/assets/img/20221210_144839.jpg" alt="20221210_144839.jpg" /></td>
+<td><img src="/assets/img/20221222_183942.jpg" alt="20221222_183942.jpg" /></td>
+</tr>
+<tr>
+<td>DAY 1</td>
+<td>DAY 2</td>
+</tr>
+<tr>
+<td>Futuring whorkshop</td>
+<td>Talks with local actors and artists</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+
+  <div class="project-details">
+    <p><strong>Role:</strong> Facilitator, Design Researcher</p>
+    <p><strong>Client:</strong> Stadslab</p>
+<p><strong>Collaborators:</strong> </p>
+<p><strong>Location :</strong> Eindhoven, Netherlands</p>
+
+    </br>
+    
+    <div class="project-tags">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="/projects/?tag=participatorydesign" class="tag">participatorydesign</a>
+        
+      
+        
+          <a href="/projects/?tag=digital_scenography" class="tag">digital_scenography</a>
+        
+      
+    </div>
+    
+    <a href="/projects/" class="back-link">🡨 Back</a>
+  </div>
+</div>
+
+
+  </div>
+
+<script>
+  // ============================================
+  // HOME CAROUSEL — scoped to .carousel only
+  // ============================================
+  const homeCarousel = document.querySelector('.carousel');
+  const homeSlides = homeCarousel ? homeCarousel.querySelectorAll('.carousel-slide') : [];
+  let current = 0;
+
+  function showSlide(index) {
+    if (homeSlides.length === 0) return;
+    homeSlides[current].classList.remove('active');
+    current = (index + homeSlides.length) % homeSlides.length;
+    homeSlides[current].classList.add('active');
+  }
+
+  function moveCarousel(dir) {
+    showSlide(current + dir);
+  }
+
+  if (homeSlides.length > 0) {
+    setInterval(() => showSlide(current + 1), 5000);
+  }
+
+  // ============================================
+// CONTENT SLIDESHOWS
+// ============================================
+document.querySelectorAll('.content-slideshow').forEach(function(slideshow) {
+  const slides = slideshow.querySelectorAll('.content-slide');
+  const dots = slideshow.querySelectorAll('.content-dot');
+  let index = 0;
+
+  function showSlide(n) {
+    slides[index].classList.remove('active');
+    dots[index].classList.remove('active');
+    index = (n + slides.length) % slides.length;
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+  }
+
+  slideshow.querySelector('.content-prev').addEventListener('click', () => showSlide(index - 1));
+  slideshow.querySelector('.content-next').addEventListener('click', () => showSlide(index + 1));
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.index)));
+  });
+});
+
+  // ============================================
+  // TABLE OF CONTENTS
+  // ============================================
+  const headings = document.querySelectorAll('.project-content h2');
+  const tocList = document.getElementById('toc-list');
+
+  if (headings.length > 0 && tocList) {
+    headings.forEach((heading, i) => {
+      const id = 'section-' + i;
+      heading.id = id;
+
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = heading.textContent;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  }
+
+
+// ============================================
+// EXTERNAL LINKS — open in new tab
+// ============================================
+document.querySelectorAll('a').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  }
+});
+
+
+</script>
+
+
+<div id="lightbox" style="display:none;">
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+  // ============================================
+  // LIGHTBOX
+  // ============================================
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+
+
+  document.querySelectorAll('img:not(.floating-img):not(.project-card img):not(.writing-image img)').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.style.display = 'flex';
+      document.body.classList.add('lightbox-open');
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    document.body.classList.remove('lightbox-open');
+  });
+
+
+
+// ============================================
+// MOBILE NAV
+// ============================================
+const toggle = document.getElementById('mobile-nav-toggle');
+const overlay = document.getElementById('mobile-nav-overlay');
+const close = document.getElementById('mobile-nav-close');
+
+if (toggle) {
+  toggle.addEventListener('click', () => overlay.classList.add('open'));
+  close.addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => overlay.classList.remove('open'));
+  });
+}
+
+
+
+</script>
+
+
+</body>
+</html>

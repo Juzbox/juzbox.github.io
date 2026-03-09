@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body class="page-about">
+  <nav>
+  <ul id="desktop-nav">
+    <li><a href="/">Hugo Pilate</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/writing/">Writing</a></li>
+    <li><a href="/teaching/">Teaching & Exhibits</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div id="mobile-nav-bar">
+    <a href="/" class="mobile-nav-logo">Hugo Pilate</a>
+    <button id="mobile-nav-toggle">+</button>
+  </div>
+</nav>
+
+<div id="mobile-nav-overlay">
+  <button id="mobile-nav-close">×</button>
+  <ul>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/writing/">Writing</a></li>
+    <li><a href="/teaching/">Teaching & Exhibits</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+</div>
+  
+  <div class="content-wrapper">
+    <div class="about-wrapper">
+<div class="about-content">
+  <h2>ABOUT</h2>
+<p>Hugo Pilate is a design researcher and digital artist based in Gothenburg, Sweden, with 10+ years of experience at the intersection of participatory design, urban transformation, and digital cultures.</p>
+<p>Trained at <a href="https://www.artcenter.edu/">Art Center College of Design</a> (BS, 2014) and <a href="https://www.gu.se/hdk-valand">HDK-Valand</a> (MFA, 2025), Hugo works with user research, speculative design, and digital storytelling for clients across private and public sectors.</p>
+<p>His practice spans the development of virtual spaces, civic engagement tools, peer-learning formats, and interactive prototypes. Alongside his design practice, Hugo is one half of <a href="https://whatamess.city/">What A Mess</a>, an artist duo co-founded with Pedro Gil Faries.</p>
+<p>Hugo has exhibited at the London Design Biennale, the Architecture Film Festival Rotterdam, Milan Machinia Film Festival, Delhi Irregulars Art Fair, and Kindl in Berlin.</p>
+<p>He has taught a variety of design-led inquiry formats at Chalmers University of Technology, the National Institute of Design, Leiden School of Urban Studies, and Art Center College of Design, among others.</p>
+<p>Past clients: <a href="https://quicksand.co.in/">Quicksand Design Studio</a>, <a href="https://www.bouwhulp.nl/">BouwhulpGroep</a>, <a href="https://www.pullexperience.com/">PullExperience</a>, <a href="https://twobitcircus.com/">Two Bit Circus</a>, <a href="https://www.plugincity.nl/">Plug-In-City</a>, <a href="https://strp.nl/">STRP Festival</a>, <a href="https://place-network.org/">PLACE Network</a>, <a href="https://diginsights.com/">the Ebco</a>, <a href="https://www.sterlingbrands.com/">Sterling Brands</a>.</p>
+
+</div>
+</div>
+
+<img class="floating-img" src="/assets/img/floating.png" alt="" />
+
+<script>
+  const floatingImg = document.querySelector('.floating-img');
+  if (floatingImg) {
+    let x = Math.random() * (window.innerWidth - 200);
+    let y = Math.random() * (window.innerHeight - 200);
+    let vx = 0.6;
+    let vy = 0.4;
+    let angle = 0;
+    let rotationSpeed = 0.3;
+
+    floatingImg.addEventListener('mouseenter', () => rotationSpeed = 8);
+    floatingImg.addEventListener('mouseleave', () => rotationSpeed = 0.3);
+
+    function animateFloat() {
+      x += vx;
+      y += vy;
+      angle += rotationSpeed;
+
+      if (x <= 0 || x >= window.innerWidth - floatingImg.width) vx *= -1;
+      if (y <= 0 || y >= window.innerHeight - floatingImg.height) vy *= -1;
+
+      floatingImg.style.left = x + 'px';
+      floatingImg.style.top = y + 'px';
+      floatingImg.style.transform = `rotate(${angle}deg)`;
+
+      requestAnimationFrame(animateFloat);
+    }
+
+    animateFloat();
+  }
+</script>
+  </div>
+
+<script>
+  // ============================================
+  // HOME CAROUSEL — scoped to .carousel only
+  // ============================================
+  const homeCarousel = document.querySelector('.carousel');
+  const homeSlides = homeCarousel ? homeCarousel.querySelectorAll('.carousel-slide') : [];
+  let current = 0;
+
+  function showSlide(index) {
+    if (homeSlides.length === 0) return;
+    homeSlides[current].classList.remove('active');
+    current = (index + homeSlides.length) % homeSlides.length;
+    homeSlides[current].classList.add('active');
+  }
+
+  function moveCarousel(dir) {
+    showSlide(current + dir);
+  }
+
+  if (homeSlides.length > 0) {
+    setInterval(() => showSlide(current + 1), 5000);
+  }
+
+  // ============================================
+// CONTENT SLIDESHOWS
+// ============================================
+document.querySelectorAll('.content-slideshow').forEach(function(slideshow) {
+  const slides = slideshow.querySelectorAll('.content-slide');
+  const dots = slideshow.querySelectorAll('.content-dot');
+  let index = 0;
+
+  function showSlide(n) {
+    slides[index].classList.remove('active');
+    dots[index].classList.remove('active');
+    index = (n + slides.length) % slides.length;
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+  }
+
+  slideshow.querySelector('.content-prev').addEventListener('click', () => showSlide(index - 1));
+  slideshow.querySelector('.content-next').addEventListener('click', () => showSlide(index + 1));
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.index)));
+  });
+});
+
+  // ============================================
+  // TABLE OF CONTENTS
+  // ============================================
+  const headings = document.querySelectorAll('.project-content h2');
+  const tocList = document.getElementById('toc-list');
+
+  if (headings.length > 0 && tocList) {
+    headings.forEach((heading, i) => {
+      const id = 'section-' + i;
+      heading.id = id;
+
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = heading.textContent;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  }
+
+
+// ============================================
+// EXTERNAL LINKS — open in new tab
+// ============================================
+document.querySelectorAll('a').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  }
+});
+
+
+</script>
+
+
+<div id="lightbox" style="display:none;">
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+  // ============================================
+  // LIGHTBOX
+  // ============================================
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+
+
+  document.querySelectorAll('img:not(.floating-img):not(.project-card img):not(.writing-image img)').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.style.display = 'flex';
+      document.body.classList.add('lightbox-open');
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    document.body.classList.remove('lightbox-open');
+  });
+
+
+
+// ============================================
+// MOBILE NAV
+// ============================================
+const toggle = document.getElementById('mobile-nav-toggle');
+const overlay = document.getElementById('mobile-nav-overlay');
+const close = document.getElementById('mobile-nav-close');
+
+if (toggle) {
+  toggle.addEventListener('click', () => overlay.classList.add('open'));
+  close.addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => overlay.classList.remove('open'));
+  });
+}
+
+
+
+</script>
+
+
+</body>
+</html>

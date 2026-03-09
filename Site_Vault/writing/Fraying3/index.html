@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fraying the Matrix: A Cyberlocal Dreams Post-Mortem (PART III)</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body class="">
+  <nav>
+  <ul id="desktop-nav">
+    <li><a href="/">Hugo Pilate</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/writing/">Writing</a></li>
+    <li><a href="/teaching/">Teaching & Exhibits</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div id="mobile-nav-bar">
+    <a href="/" class="mobile-nav-logo">Hugo Pilate</a>
+    <button id="mobile-nav-toggle">+</button>
+  </div>
+</nav>
+
+<div id="mobile-nav-overlay">
+  <button id="mobile-nav-close">×</button>
+  <ul>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/writing/">Writing</a></li>
+    <li><a href="/teaching/">Teaching & Exhibits</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+</div>
+  
+  <div class="content-wrapper">
+    <div class="project">
+  <aside class="project-meta">
+    <h1>Fraying the Matrix: A Cyberlocal Dreams Post-Mortem (PART III)</h1>
+    <p></p>
+    
+  <div class="project-tags">
+    
+      
+        <a href="/projects/?tag=writing" class="tag">writing</a>
+      
+    
+      
+        <a href="/projects/?tag=writing" class="tag">writing</a>
+      
+    
+  </div>
+
+<a href="/writing/" class="back-link">🡨 Back</a>
+  </aside>
+  <div class="project-content">
+    
+  </div>
+</div>
+  </div>
+
+<script>
+  // ============================================
+  // HOME CAROUSEL — scoped to .carousel only
+  // ============================================
+  const homeCarousel = document.querySelector('.carousel');
+  const homeSlides = homeCarousel ? homeCarousel.querySelectorAll('.carousel-slide') : [];
+  let current = 0;
+
+  function showSlide(index) {
+    if (homeSlides.length === 0) return;
+    homeSlides[current].classList.remove('active');
+    current = (index + homeSlides.length) % homeSlides.length;
+    homeSlides[current].classList.add('active');
+  }
+
+  function moveCarousel(dir) {
+    showSlide(current + dir);
+  }
+
+  if (homeSlides.length > 0) {
+    setInterval(() => showSlide(current + 1), 5000);
+  }
+
+  // ============================================
+// CONTENT SLIDESHOWS
+// ============================================
+document.querySelectorAll('.content-slideshow').forEach(function(slideshow) {
+  const slides = slideshow.querySelectorAll('.content-slide');
+  const dots = slideshow.querySelectorAll('.content-dot');
+  let index = 0;
+
+  function showSlide(n) {
+    slides[index].classList.remove('active');
+    dots[index].classList.remove('active');
+    index = (n + slides.length) % slides.length;
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+  }
+
+  slideshow.querySelector('.content-prev').addEventListener('click', () => showSlide(index - 1));
+  slideshow.querySelector('.content-next').addEventListener('click', () => showSlide(index + 1));
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.index)));
+  });
+});
+
+  // ============================================
+  // TABLE OF CONTENTS
+  // ============================================
+  const headings = document.querySelectorAll('.project-content h2');
+  const tocList = document.getElementById('toc-list');
+
+  if (headings.length > 0 && tocList) {
+    headings.forEach((heading, i) => {
+      const id = 'section-' + i;
+      heading.id = id;
+
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = heading.textContent;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  }
+
+
+// ============================================
+// EXTERNAL LINKS — open in new tab
+// ============================================
+document.querySelectorAll('a').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  }
+});
+
+
+</script>
+
+
+<div id="lightbox" style="display:none;">
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+  // ============================================
+  // LIGHTBOX
+  // ============================================
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+
+
+  document.querySelectorAll('img:not(.floating-img):not(.project-card img):not(.writing-image img)').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.style.display = 'flex';
+      document.body.classList.add('lightbox-open');
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    document.body.classList.remove('lightbox-open');
+  });
+
+
+
+// ============================================
+// MOBILE NAV
+// ============================================
+const toggle = document.getElementById('mobile-nav-toggle');
+const overlay = document.getElementById('mobile-nav-overlay');
+const close = document.getElementById('mobile-nav-close');
+
+if (toggle) {
+  toggle.addEventListener('click', () => overlay.classList.add('open'));
+  close.addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => overlay.classList.remove('open'));
+  });
+}
+
+
+
+</script>
+
+
+</body>
+</html>

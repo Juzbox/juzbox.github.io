@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STRENGTHENING LOCAL FOOD SYSTEMS</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body class="">
+  <nav>
+  <ul id="desktop-nav">
+    <li><a href="/">Hugo Pilate</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/writing/">Writing</a></li>
+    <li><a href="/teaching/">Teaching & Exhibits</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div id="mobile-nav-bar">
+    <a href="/" class="mobile-nav-logo">Hugo Pilate</a>
+    <button id="mobile-nav-toggle">+</button>
+  </div>
+</nav>
+
+<div id="mobile-nav-overlay">
+  <button id="mobile-nav-close">×</button>
+  <ul>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/writing/">Writing</a></li>
+    <li><a href="/teaching/">Teaching & Exhibits</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+</div>
+  
+  <div class="content-wrapper">
+    <div class="project">
+  <aside class="project-meta">
+    <h1>STRENGTHENING LOCAL FOOD SYSTEMS</h1>
+    <p>A workshop designed to consolidate relations between stakeholders of the Gothenburg  food ecosystem.</p>
+    <ul id="toc-list"></ul>
+
+  </aside>
+
+  <div class="project-content">
+    <h1>In light of geopolitical instability and the impact of global warming on food production, how might Gothenburg support the strengthening of its local food ecosystems?</h1>
+<h2>Overview</h2>
+<table>
+<thead>
+<tr>
+<th><strong>BRIEF</strong></th>
+<th><strong>APPROACH</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Design a workshop bringing together producers, distributors, processors and potential customers to identify core values, drivers, and challenges shaping the development of Gothenburg’s local food ecosystem.</td>
+<td>My role was to consult on workshop design, production and documentation, with a focus on providing a hybrid experience for online and in-person participants, and producing a booklet capturing the consolidated set of recommended strategies .<br><br>The workshop was organized in coordination with several local actors: Almost There, Natet, and VAST,</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><div class="content-slideshow">
+  <div class="content-slide active">
+    <img src="/assets/img/IMG_0951.jpg" alt="IMG_0951.jpg" />
+  </div>
+<div class="content-slide ">
+    <img src="/assets/img/IMG_6652.jpg" alt="IMG_6652.jpg" />
+  </div>
+<div class="content-slide ">
+    <img src="/assets/img/IMG_6770.jpg" alt="IMG_6770.jpg" />
+  </div>
+<div class="content-slide ">
+    <img src="/assets/img/IMG_6825.jpg" alt="IMG_6825.jpg" />
+  </div>
+  <a class="content-prev">&#10094;</a>
+  <a class="content-next">&#10095;</a>
+  <div class="content-dots"><div class="content-dot active" data-index="0"></div><div class="content-dot " data-index="1"></div><div class="content-dot " data-index="2"></div><div class="content-dot " data-index="3"></div></div>
+</div></p>
+<h2>The workshop report</h2>
+<p>The project resulted in the design of a hybrid workshop format allowing for on-site reflection as well as the participation of remote actors. From the workshop a series of insights and concerns were raised according to Producers', Distributors, and Consumers' respective observations. The experience was facilitated using Dixit cards and a dedicated facilitator from each team who identified with one of the three key stakeholder groups.</p>
+<p>To capture these reflections and support their dissemination, I created a small A5 publication, which has now been used in further grant applications and project developments.</p>
+<p><img src="/assets/img/AlmostTherePrototype.jpg" alt="AlmostTherePrototype.jpg" /></p>
+<iframe src="/assets/img/WorkshopReport_AT_V2.pdf#view=FitH" class="pdf-embed" style="border:none;"></iframe>
+
+  </div>
+
+  <div class="project-details">
+    <p><strong>Role:</strong> Facilitator</p>
+    <p><strong>Client:</strong> Almost There</p>
+<p><strong>Collaborators:</strong> Diba Mokhtabad</p>
+<p><strong>Location :</strong> Eindhoven, Netherlands</p>
+
+    </br>
+    
+    <div class="project-tags">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="/projects/?tag=design_strategy" class="tag">design_strategy</a>
+        
+      
+        
+          <a href="/projects/?tag=participatorydesign" class="tag">participatorydesign</a>
+        
+      
+    </div>
+    
+    <a href="/projects/" class="back-link">🡨 Back</a>
+  </div>
+</div>
+
+
+  </div>
+
+<script>
+  // ============================================
+  // HOME CAROUSEL — scoped to .carousel only
+  // ============================================
+  const homeCarousel = document.querySelector('.carousel');
+  const homeSlides = homeCarousel ? homeCarousel.querySelectorAll('.carousel-slide') : [];
+  let current = 0;
+
+  function showSlide(index) {
+    if (homeSlides.length === 0) return;
+    homeSlides[current].classList.remove('active');
+    current = (index + homeSlides.length) % homeSlides.length;
+    homeSlides[current].classList.add('active');
+  }
+
+  function moveCarousel(dir) {
+    showSlide(current + dir);
+  }
+
+  if (homeSlides.length > 0) {
+    setInterval(() => showSlide(current + 1), 5000);
+  }
+
+  // ============================================
+// CONTENT SLIDESHOWS
+// ============================================
+document.querySelectorAll('.content-slideshow').forEach(function(slideshow) {
+  const slides = slideshow.querySelectorAll('.content-slide');
+  const dots = slideshow.querySelectorAll('.content-dot');
+  let index = 0;
+
+  function showSlide(n) {
+    slides[index].classList.remove('active');
+    dots[index].classList.remove('active');
+    index = (n + slides.length) % slides.length;
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+  }
+
+  slideshow.querySelector('.content-prev').addEventListener('click', () => showSlide(index - 1));
+  slideshow.querySelector('.content-next').addEventListener('click', () => showSlide(index + 1));
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.index)));
+  });
+});
+
+  // ============================================
+  // TABLE OF CONTENTS
+  // ============================================
+  const headings = document.querySelectorAll('.project-content h2');
+  const tocList = document.getElementById('toc-list');
+
+  if (headings.length > 0 && tocList) {
+    headings.forEach((heading, i) => {
+      const id = 'section-' + i;
+      heading.id = id;
+
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = heading.textContent;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  }
+
+
+// ============================================
+// EXTERNAL LINKS — open in new tab
+// ============================================
+document.querySelectorAll('a').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  }
+});
+
+
+</script>
+
+
+<div id="lightbox" style="display:none;">
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+  // ============================================
+  // LIGHTBOX
+  // ============================================
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+
+
+  document.querySelectorAll('img:not(.floating-img):not(.project-card img):not(.writing-image img)').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.style.display = 'flex';
+      document.body.classList.add('lightbox-open');
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    document.body.classList.remove('lightbox-open');
+  });
+
+
+
+// ============================================
+// MOBILE NAV
+// ============================================
+const toggle = document.getElementById('mobile-nav-toggle');
+const overlay = document.getElementById('mobile-nav-overlay');
+const close = document.getElementById('mobile-nav-close');
+
+if (toggle) {
+  toggle.addEventListener('click', () => overlay.classList.add('open'));
+  close.addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => overlay.classList.remove('open'));
+  });
+}
+
+
+
+</script>
+
+
+</body>
+</html>

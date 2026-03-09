@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WHATEVER COMES NEXT</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body class="">
+  <nav>
+  <ul id="desktop-nav">
+    <li><a href="/">Hugo Pilate</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/writing/">Writing</a></li>
+    <li><a href="/teaching/">Teaching & Exhibits</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div id="mobile-nav-bar">
+    <a href="/" class="mobile-nav-logo">Hugo Pilate</a>
+    <button id="mobile-nav-toggle">+</button>
+  </div>
+</nav>
+
+<div id="mobile-nav-overlay">
+  <button id="mobile-nav-close">×</button>
+  <ul>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/writing/">Writing</a></li>
+    <li><a href="/teaching/">Teaching & Exhibits</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+</div>
+  
+  <div class="content-wrapper">
+    <div class="project">
+  <aside class="project-meta">
+    <h1>WHATEVER COMES NEXT</h1>
+    <p>A live performance mixing live generated visuals and site-based references.</p>
+    <ul id="toc-list"></ul>
+
+  </aside>
+
+  <div class="project-content">
+    <h1>How can imagining the future of a single contested site like Smedjegatan 5, help reflect on the tensions shaping the city of Gothenburg?</h1>
+<h2>Overview</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/assets/img/DiscoPerformance.gif" alt="DiscoPerformance.gif" /></td>
+<td>An audiovisual performance presented live at Smedjegatan 5 in Gothenburg aka <a href="https://www.syntropia.space/">Syntropia</a>. The site-specific work questions the past, present, and future of this address by putting it in dialogue with a spiritual twin, the <a href="https://discoelysium.fandom.com/wiki/Whirling-in-Rags">Whirling-In-Rags</a>.<br><br>This performance uses <a href="https://www.youtube.com/watch?v=X4rlC6y1ahw">Streaming Diffusion</a> and Touchdesigner to reinterpret archival images, video game footage from <a href="https://en.wikipedia.org/wiki/Disco_Elysium">Disco Elysium</a>, and footage of the area I captured during neighborhood walks. The piece was performed using live generated visuals accompanied by a text I wrote and performed by <a href="https://oshinsiaobhatt.com/" target="_blank" rel="noopener noreferrer">Oshin Siao Bhatt</a>, on the potential futures of the area.<br><br>Photos of event by Robin Rydén.<br><br></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/assets/img/_DSC0973.jpg" alt="_DSC0973.jpg" /></td>
+<td><img src="/assets/img/Screenshot 2026-03-07 225123.png" alt="Screenshot 2026-03-07 225123.png" /></td>
+<td><img src="/assets/img/Screenshot 2026-03-07 225105.png" alt="Screenshot 2026-03-07 225105.png" /></td>
+<td><img src="/assets/img/_DSC0933.jpg" alt="_DSC0933.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Performance</h2>
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/944525603?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Whatever Comes Next"></iframe></div>
+  </div>
+
+  <div class="project-details">
+    <p><strong>Role:</strong> Design Researcher</p>
+    <p><strong>Client:</strong> Redman, Fabbula</p>
+<p><strong>Collaborators:</strong> </p>
+<p><strong>Location :</strong> Gothenburg, Sweden</p>
+
+    </br>
+    
+    <div class="project-tags">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="/projects/?tag=participatorydesign" class="tag">participatorydesign</a>
+        
+      
+        
+          <a href="/projects/?tag=digital_scenography" class="tag">digital_scenography</a>
+        
+      
+    </div>
+    
+    <a href="/projects/" class="back-link">🡨 Back</a>
+  </div>
+</div>
+
+
+  </div>
+
+<script>
+  // ============================================
+  // HOME CAROUSEL — scoped to .carousel only
+  // ============================================
+  const homeCarousel = document.querySelector('.carousel');
+  const homeSlides = homeCarousel ? homeCarousel.querySelectorAll('.carousel-slide') : [];
+  let current = 0;
+
+  function showSlide(index) {
+    if (homeSlides.length === 0) return;
+    homeSlides[current].classList.remove('active');
+    current = (index + homeSlides.length) % homeSlides.length;
+    homeSlides[current].classList.add('active');
+  }
+
+  function moveCarousel(dir) {
+    showSlide(current + dir);
+  }
+
+  if (homeSlides.length > 0) {
+    setInterval(() => showSlide(current + 1), 5000);
+  }
+
+  // ============================================
+// CONTENT SLIDESHOWS
+// ============================================
+document.querySelectorAll('.content-slideshow').forEach(function(slideshow) {
+  const slides = slideshow.querySelectorAll('.content-slide');
+  const dots = slideshow.querySelectorAll('.content-dot');
+  let index = 0;
+
+  function showSlide(n) {
+    slides[index].classList.remove('active');
+    dots[index].classList.remove('active');
+    index = (n + slides.length) % slides.length;
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+  }
+
+  slideshow.querySelector('.content-prev').addEventListener('click', () => showSlide(index - 1));
+  slideshow.querySelector('.content-next').addEventListener('click', () => showSlide(index + 1));
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.index)));
+  });
+});
+
+  // ============================================
+  // TABLE OF CONTENTS
+  // ============================================
+  const headings = document.querySelectorAll('.project-content h2');
+  const tocList = document.getElementById('toc-list');
+
+  if (headings.length > 0 && tocList) {
+    headings.forEach((heading, i) => {
+      const id = 'section-' + i;
+      heading.id = id;
+
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = heading.textContent;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  }
+
+
+// ============================================
+// EXTERNAL LINKS — open in new tab
+// ============================================
+document.querySelectorAll('a').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  }
+});
+
+
+</script>
+
+
+<div id="lightbox" style="display:none;">
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+  // ============================================
+  // LIGHTBOX
+  // ============================================
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+
+
+  document.querySelectorAll('img:not(.floating-img):not(.project-card img):not(.writing-image img)').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.style.display = 'flex';
+      document.body.classList.add('lightbox-open');
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    document.body.classList.remove('lightbox-open');
+  });
+
+
+
+// ============================================
+// MOBILE NAV
+// ============================================
+const toggle = document.getElementById('mobile-nav-toggle');
+const overlay = document.getElementById('mobile-nav-overlay');
+const close = document.getElementById('mobile-nav-close');
+
+if (toggle) {
+  toggle.addEventListener('click', () => overlay.classList.add('open'));
+  close.addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => overlay.classList.remove('open'));
+  });
+}
+
+
+
+</script>
+
+
+</body>
+</html>

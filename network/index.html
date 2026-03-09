@@ -1,0 +1,453 @@
+<div id="network-container">
+  <svg id="connections"></svg>
+</div>
+
+<script>
+  const siteData = [
+    
+    {
+      id: 1,
+      title: &quot;COUNTER-TWINNING IN GOTHENBURG&quot;,
+      url: &quot;/projects/counter-twinning-in-gothenburg/&quot;,
+      type: "project",
+      tags: [&quot;projects&quot;,&quot;work&quot;,&quot;spotlight&quot;,&quot;projects&quot;,&quot;design_strategy&quot;,&quot;critical_spatial_practice&quot;]
+    },
+    
+    {
+      id: 2,
+      title: &quot;STRENGTHENING LOCAL FOOD SYSTEMS&quot;,
+      url: &quot;/projects/local-food/&quot;,
+      type: "project",
+      tags: [&quot;projects&quot;,&quot;work&quot;,&quot;spotlight&quot;,&quot;design_strategy&quot;,&quot;participatorydesign&quot;]
+    },
+    
+    {
+      id: 3,
+      title: &quot;WHATEVER COMES NEXT&quot;,
+      url: &quot;/projects/whatevercomesnext/&quot;,
+      type: "project",
+      tags: [&quot;projects&quot;,&quot;work&quot;,&quot;spotlight&quot;,&quot;participatorydesign&quot;,&quot;digital_scenography&quot;]
+    },
+    
+    {
+      id: 4,
+      title: &quot;LA CITÉ DE L’IMAGE ET DU VIVANT&quot;,
+      url: &quot;/projects/CDV/&quot;,
+      type: "project",
+      tags: [&quot;projects&quot;,&quot;work&quot;,&quot;spotlight&quot;,&quot;design_strategy&quot;,&quot;participatorydesign&quot;,&quot;digital_scenography&quot;]
+    },
+    
+    {
+      id: 5,
+      title: &quot;THE TURFU PLAYBOOK&quot;,
+      url: &quot;/projects/turfuplaybook/&quot;,
+      type: "project",
+      tags: [&quot;projects&quot;,&quot;work&quot;,&quot;spotlight&quot;,&quot;projects&quot;,&quot;speculativedesign&quot;,&quot;participatorydesign&quot;]
+    },
+    
+    {
+      id: 6,
+      title: &quot;IKWOON&quot;,
+      url: &quot;/projects/ikwoon/&quot;,
+      type: "project",
+      tags: [&quot;projects&quot;,&quot;work&quot;,&quot;spotlight&quot;,&quot;design_strategy&quot;,&quot;participatorydesign&quot;]
+    },
+    
+    {
+      id: 7,
+      title: &quot;CONVIVIAL CITY&quot;,
+      url: &quot;/projects/convivialcity/&quot;,
+      type: "project",
+      tags: [&quot;projects&quot;,&quot;work&quot;,&quot;spotlight&quot;,&quot;participatorydesign&quot;,&quot;digital_scenography&quot;]
+    },
+    
+    {
+      id: 8,
+      title: &quot;LIFE WITH LIMITED ENERGY&quot;,
+      url: &quot;/projects/s10/&quot;,
+      type: "project",
+      tags: [&quot;projects&quot;,&quot;work&quot;,&quot;spotlight&quot;,&quot;participatorydesign&quot;,&quot;digital_scenography&quot;]
+    }
+    
+    ,
+    
+    {
+      id: 9,
+      title: &quot;Twinside Out, Escaping Tokenistic Civic Engagement in Streets of Virtual Gothenburg&quot;,
+      url: &quot;/Site_Vault/writing/AESOP/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;panarchy&quot;,&quot;participatorydesign&quot;]
+    },
+    
+    {
+      id: 10,
+      title: &quot;COUNTER-TWINNING IN GOTHENBURG&quot;,
+      url: &quot;/Site_Vault/writing/COUNTER-TWINNING IN GOTHENBURG/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;participatorydesign&quot;,&quot;counter-cartography&quot;]
+    },
+    
+    {
+      id: 11,
+      title: &quot;Visualizing cultural values in urban planning - a preparatory framework for their integration in digital twins&quot;,
+      url: &quot;/Site_Vault/writing/Visualizing cultural values in urban planning - a preparatory framework for their integration in digital twins/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;participatorydesign&quot;]
+    },
+    
+    {
+      id: 12,
+      title: &quot;Mourning A Stranger — Brushing up against Gothenburg&#39;s past residents&quot;,
+      url: &quot;/Site_Vault/writing/MourningaStranger/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;writing&quot;]
+    },
+    
+    {
+      id: 13,
+      title: &quot;A JOURNEY THROUGH HEL&quot;,
+      url: &quot;/writing/HEL/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;ConsumerCulture&quot;,&quot;participatorydesign&quot;,&quot;speculativedesign&quot;]
+    },
+    
+    {
+      id: 14,
+      title: &quot;Fraying the Matrix: A Cyberlocal Dreams Post-Mortem (PART II)&quot;,
+      url: &quot;/Site_Vault/writing/Fraying2/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;writing&quot;]
+    },
+    
+    {
+      id: 15,
+      title: &quot;Fraying the Matrix: A Cyberlocal Dreams Post-Mortem (PART III)&quot;,
+      url: &quot;/Site_Vault/writing/Fraying3/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;writing&quot;]
+    },
+    
+    {
+      id: 16,
+      title: &quot;WHAT A MESS, a tale of collaborative photogrammetry&quot;,
+      url: &quot;/Site_Vault/writing/WAM/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;writing&quot;]
+    },
+    
+    {
+      id: 17,
+      title: &quot;Fraying the Matrix: A Cyberlocal Dreams Post-Mortem (PART I)&quot;,
+      url: &quot;/Site_Vault/writing/fraying1/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;writing&quot;]
+    },
+    
+    {
+      id: 18,
+      title: &quot;The Agora Jam: Co-creating the Agoraverse&quot;,
+      url: &quot;/Site_Vault/writing/Agorajam/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;writing&quot;]
+    },
+    
+    {
+      id: 19,
+      title: &quot;Balancing hype and accountability&quot;,
+      url: &quot;/Site_Vault/writing/Hype/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;writing&quot;]
+    },
+    
+    {
+      id: 20,
+      title: &quot;Automation &amp; Design Sprints&quot;,
+      url: &quot;/Site_Vault/writing/Automation/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;writing&quot;]
+    },
+    
+    {
+      id: 21,
+      title: &quot;Papyrus Go&quot;,
+      url: &quot;/Site_Vault/writing/papyrusgo/&quot;,
+      type: "writing",
+      tags: [&quot;writing&quot;,&quot;writing&quot;]
+    }
+    
+  ];
+
+  const container = document.getElementById('network-container');
+  const svg = document.getElementById('connections');
+  let containerRect = container.getBoundingClientRect();
+
+  const skipTags = ['projects', 'work', 'selected', 'spotlight', 'writing'];
+
+  const nodes = [];
+  const nodeElements = {};
+  let physicsEnabled = true;
+  let animationEnabled = false;
+  let draggedNode = null;
+
+  // Initialize nodes in circular layout
+  siteData.forEach((item, index) => {
+    const angle = (index / siteData.length) * Math.PI * 2;
+    const radius = Math.min(containerRect.width, containerRect.height) * 0.3;
+    const centerX = containerRect.width / 2;
+    const centerY = containerRect.height / 2;
+
+    nodes.push({
+      id: item.id,
+      data: item,
+      x: centerX + Math.cos(angle) * radius,
+      y: centerY + Math.sin(angle) * radius,
+      baseX: centerX + Math.cos(angle) * radius,
+      baseY: centerY + Math.sin(angle) * radius,
+      vx: 0,
+      vy: 0,
+      noiseOffsetX: Math.random() * 1000,
+      noiseOffsetY: Math.random() * 1000
+    });
+  });
+
+  // Connections based on shared tags
+  const connections = [];
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const tagsA = (nodes[i].data.tags || []).filter(t => !skipTags.includes(t));
+      const tagsB = (nodes[j].data.tags || []).filter(t => !skipTags.includes(t));
+      const shared = tagsA.filter(t => tagsB.includes(t));
+      if (shared.length > 0) {
+        connections.push({
+          from: nodes[i],
+          to: nodes[j],
+          strength: shared.length,
+          keywords: shared
+        });
+      }
+    }
+  }
+
+  // Create DOM elements
+  nodes.forEach(node => {
+    const nodeDiv = document.createElement('div');
+    nodeDiv.className = 'node-item';
+    nodeDiv.dataset.type = node.data.type;
+    nodeDiv.style.left = node.x + 'px';
+    nodeDiv.style.top = node.y + 'px';
+    nodeDiv.style.transform = 'translate(-50%, -50%)';
+    nodeDiv.style.zIndex = '10';
+
+    const label = document.createElement('a');
+    label.href = node.data.url;
+    label.className = 'node-label';
+    label.textContent = node.data.title;
+
+    const tagList = document.createElement('div');
+    tagList.className = 'node-tags';
+    (node.data.tags || []).filter(t => !skipTags.includes(t)).forEach(tag => {
+      const span = document.createElement('span');
+      span.textContent = tag;
+      tagList.appendChild(span);
+    });
+
+    nodeDiv.appendChild(label);
+    nodeDiv.appendChild(tagList);
+    container.appendChild(nodeDiv);
+    nodeElements[node.id] = nodeDiv;
+
+    // Drag
+    let isDragging = false;
+    let startX, startY, initialX, initialY;
+
+    nodeDiv.addEventListener('mousedown', (e) => {
+      if (e.target.tagName === 'A') return;
+      Object.values(nodeElements).forEach(el => el.style.zIndex = '10');
+      nodeDiv.style.zIndex = '100';
+      isDragging = true;
+      draggedNode = node;
+      startX = e.clientX;
+      startY = e.clientY;
+      initialX = node.x;
+      initialY = node.y;
+      nodeDiv.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging && draggedNode === node) {
+        node.x = initialX + (e.clientX - startX);
+        node.y = initialY + (e.clientY - startY);
+        node.baseX = node.x;
+        node.baseY = node.y;
+        node.vx = 0;
+        node.vy = 0;
+        updateNodePosition(node);
+        drawConnections();
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (isDragging && draggedNode === node) {
+        isDragging = false;
+        draggedNode = null;
+        nodeDiv.style.cursor = 'grab';
+      }
+    });
+
+    // Touch
+    nodeDiv.addEventListener('touchstart', (e) => {
+      Object.values(nodeElements).forEach(el => el.style.zIndex = '10');
+      nodeDiv.style.zIndex = '100';
+      isDragging = true;
+      draggedNode = node;
+      const touch = e.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      initialX = node.x;
+      initialY = node.y;
+      e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('touchmove', (e) => {
+      if (isDragging && draggedNode === node) {
+        const touch = e.touches[0];
+        node.x = initialX + (touch.clientX - startX);
+        node.y = initialY + (touch.clientY - startY);
+        node.baseX = node.x;
+        node.baseY = node.y;
+        node.vx = 0;
+        node.vy = 0;
+        updateNodePosition(node);
+        drawConnections();
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    document.addEventListener('touchend', () => {
+      if (isDragging && draggedNode === node) {
+        isDragging = false;
+        draggedNode = null;
+      }
+    });
+  });
+
+  // Physics
+  function applyPhysics() {
+    if (!physicsEnabled) return;
+    const centerX = containerRect.width / 2;
+    const centerY = containerRect.height / 2;
+
+    nodes.forEach(node => {
+      if (draggedNode === node) return;
+
+      nodes.forEach(other => {
+        if (node === other) return;
+        const dx = node.x - other.x;
+        const dy = node.y - other.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const force = 8000 / (dist * dist);
+        node.vx += (dx / dist) * force;
+        node.vy += (dy / dist) * force;
+      });
+
+      connections.forEach(conn => {
+        if (conn.from !== node && conn.to !== node) return;
+        const other = conn.from === node ? conn.to : conn.from;
+        const dx = other.x - node.x;
+        const dy = other.y - node.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const targetDist = 300;
+        const force = (dist - targetDist) * 0.001 * conn.strength;
+        node.vx += (dx / dist) * force;
+        node.vy += (dy / dist) * force;
+      });
+
+      node.vx += (centerX - node.x) * 0.0001;
+      node.vy += (centerY - node.y) * 0.0001;
+      node.vx *= 0.85;
+      node.vy *= 0.85;
+      node.x += node.vx;
+      node.y += node.vy;
+      node.baseX = node.x;
+      node.baseY = node.y;
+
+      const margin = 100;
+      node.x = Math.max(margin, Math.min(containerRect.width - margin, node.x));
+      node.y = Math.max(margin, Math.min(containerRect.height - margin, node.y));
+    });
+  }
+
+  // Floating
+  function noise(x) {
+    const X = Math.floor(x) & 255;
+    x -= Math.floor(x);
+    return lerp(fade(x), grad(X, x), grad(X + 1, x - 1)) * 2 - 1;
+  }
+  function fade(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
+  function lerp(t, a, b) { return a + t * (b - a); }
+  function grad(hash, x) { return (hash & 1) === 0 ? x : -x; }
+
+  function applyFloating() {
+    if (!animationEnabled || physicsEnabled) return;
+    const time = Date.now() * 0.0003;
+    nodes.forEach(node => {
+      if (draggedNode === node) return;
+      node.x = node.baseX + noise(time + node.noiseOffsetX) * 3;
+      node.y = node.baseY + noise(time + node.noiseOffsetY) * 3;
+    });
+  }
+
+  function updateNodePosition(node) {
+    nodeElements[node.id].style.left = node.x + 'px';
+    nodeElements[node.id].style.top = node.y + 'px';
+  }
+
+  function drawConnections() {
+    svg.innerHTML = '';
+    document.querySelectorAll('.connection-label').forEach(l => l.remove());
+
+    connections.forEach(conn => {
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', conn.from.x);
+      line.setAttribute('y1', conn.from.y);
+      line.setAttribute('x2', conn.to.x);
+      line.setAttribute('y2', conn.to.y);
+      line.setAttribute('class', 'connection-line');
+      line.setAttribute('stroke-width', conn.strength * 1.5);
+      svg.appendChild(line);
+
+      const label = document.createElement('div');
+      label.className = 'connection-label';
+      label.textContent = conn.keywords.join(', ');
+      label.style.left = ((conn.from.x + conn.to.x) / 2) + 'px';
+      label.style.top = ((conn.from.y + conn.to.y) / 2) + 'px';
+      label.style.transform = 'translate(-50%, -50%)';
+      container.appendChild(label);
+    });
+  }
+
+  function animate() {
+    if (physicsEnabled) applyPhysics();
+    else applyFloating();
+    nodes.forEach(updateNodePosition);
+    drawConnections();
+    requestAnimationFrame(animate);
+  }
+
+  let stabilizationCounter = 0;
+  const stabilizationInterval = setInterval(() => {
+    applyPhysics();
+    nodes.forEach(node => {
+      node.baseX = node.x;
+      node.baseY = node.y;
+      updateNodePosition(node);
+    });
+    drawConnections();
+    if (++stabilizationCounter > 100) {
+      clearInterval(stabilizationInterval);
+      physicsEnabled = false;
+      setTimeout(() => { animationEnabled = true; animate(); }, 500);
+    }
+  }, 20);
+</script>
