@@ -9,32 +9,33 @@
 </head>
 
 <body class="">
-  <nav>
-  <ul id="desktop-nav">
-    <li><a href="/">Hugo Pilate</a></li>
-    <li><a href="/projects/">Projects</a></li>
-    <li><a href="/writing/">Writing</a></li>
-    <li><a href="/teaching/">Teaching & Exhibits</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="mailto:hugopilate@gmail.com">Contact</a></li>
-  </ul>
-  <div id="mobile-nav-bar">
-    <a href="/" class="mobile-nav-logo">Hugo Pilate</a>
-    <button id="mobile-nav-toggle">+</button>
-  </div>
-</nav>
 
-<div id="mobile-nav-overlay" style="display:none;">
-  <button id="mobile-nav-close">×</button>
-  <ul>
-    <li><a href="/projects/">Projects</a></li>
-    <li><a href="/writing/">Writing</a></li>
-    <li><a href="/teaching/">Teaching & Exhibits</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="mailto:hugopilate@gmail.com">Email</a></li>
-  </ul>
-</div>
-  
+  <nav>
+    <ul id="desktop-nav">
+      <li><a href="/">Hugo Pilate</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/writing/">Writing</a></li>
+      <li><a href="/teaching/">Teaching & Exhibits</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="mailto:hugopilate@gmail.com">Contact</a></li>
+    </ul>
+    <div id="mobile-nav-bar">
+      <a href="/" class="mobile-nav-logo">Hugo Pilate</a>
+      <button id="mobile-nav-toggle">+</button>
+    </div>
+  </nav>
+
+  <div id="mobile-nav-overlay">
+    <button id="mobile-nav-close">×</button>
+    <ul>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/writing/">Writing</a></li>
+      <li><a href="/teaching/">Teaching & Exhibits</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="mailto:hugopilate@gmail.com">Email</a></li>
+    </ul>
+  </div>
+
   <div class="content-wrapper">
     <div class="project">
   <aside class="project-meta">
@@ -61,181 +62,161 @@
 </div>
   </div>
 
-<script>
-  // ============================================
-  // HOME CAROUSEL — scoped to .carousel only
-  // ============================================
-  const homeCarousel = document.querySelector('.carousel');
-  const homeSlides = homeCarousel ? homeCarousel.querySelectorAll('.carousel-slide') : [];
-  let current = 0;
+  <div id="lightbox" style="display:none;">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
 
-  function showSlide(index) {
-    if (homeSlides.length === 0) return;
-    homeSlides[current].classList.remove('active');
-    current = (index + homeSlides.length) % homeSlides.length;
-    homeSlides[current].classList.add('active');
-  }
+  <script>
+    // ============================================
+    // HOME CAROUSEL
+    // ============================================
+    const homeCarousel = document.querySelector('.carousel');
+    const homeSlides = homeCarousel ? homeCarousel.querySelectorAll('.carousel-slide') : [];
+    let current = 0;
 
-  function moveCarousel(dir) {
-    showSlide(current + dir);
-  }
-
-  if (homeSlides.length > 0) {
-    setInterval(() => showSlide(current + 1), 5000);
-  }
-
-  // ============================================
-// CONTENT SLIDESHOWS
-// ============================================
-document.querySelectorAll('.content-slideshow').forEach(function(slideshow) {
-  const slides = slideshow.querySelectorAll('.content-slide');
-  const dots = slideshow.querySelectorAll('.content-dot');
-  let index = 0;
-
-  function showSlide(n) {
-    slides[index].classList.remove('active');
-    dots[index].classList.remove('active');
-    index = (n + slides.length) % slides.length;
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-  }
-
-  slideshow.querySelector('.content-prev').addEventListener('click', () => showSlide(index - 1));
-  slideshow.querySelector('.content-next').addEventListener('click', () => showSlide(index + 1));
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.index)));
-  });
-});
-
-  // ============================================
-  // TABLE OF CONTENTS
-  // ============================================
-  const headings = document.querySelectorAll('.project-content h2');
-  const tocList = document.getElementById('toc-list');
-
-  if (headings.length > 0 && tocList) {
-    headings.forEach((heading, i) => {
-      const id = 'section-' + i;
-      heading.id = id;
-
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + id;
-      a.textContent = heading.textContent;
-      li.appendChild(a);
-      tocList.appendChild(li);
-    });
-  }
-
-
-// ============================================
-// EXTERNAL LINKS — open in new tab
-// ============================================
-document.querySelectorAll('a').forEach(link => {
-  const href = link.getAttribute('href');
-  if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
-    link.setAttribute('target', '_blank');
-    link.setAttribute('rel', 'noopener noreferrer');
-  }
-});
-
-
-</script>
-
-
-<div id="lightbox" style="display:none;">
-  <img id="lightbox-img" src="" alt="" />
-</div>
-
-<script>
-  // ============================================
-  // LIGHTBOX
-  // ============================================
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-
-
-
-  document.querySelectorAll('img:not(.floating-img):not(.project-card img):not(.writing-image img)').forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.style.display = 'flex';
-      document.body.classList.add('lightbox-open');
-    });
-  });
-
-  lightbox.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-    document.body.classList.remove('lightbox-open');
-  });
-
-
-
-// ============================================
-// MOBILE NAV
-// ============================================
-const toggle = document.getElementById('mobile-nav-toggle');
-const overlay = document.getElementById('mobile-nav-overlay');
-const close = document.getElementById('mobile-nav-close');
-
-if (toggle) {
-  toggle.addEventListener('click', () => {
-  overlay.style.display = 'flex';
-});
-close.addEventListener('click', () => {
-  overlay.style.removeProperty('display');  
-  overlay.style.display = 'none';
-});
-overlay.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    overlay.style.display = 'none';
-  });
-});
-}
-
-// ============================================
-// SWIPE GESTURES
-// ============================================
-function addSwipe(element, onSwipeLeft, onSwipeRight) {
-  let startX = 0;
-  let startY = 0;
-
-  element.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-  }, { passive: true });
-
-  element.addEventListener('touchend', (e) => {
-    const dx = e.changedTouches[0].clientX - startX;
-    const dy = e.changedTouches[0].clientY - startY;
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-      if (dx < 0) onSwipeLeft();
-      else onSwipeRight();
+    function showSlide(index) {
+      if (homeSlides.length === 0) return;
+      homeSlides[current].classList.remove('active');
+      current = (index + homeSlides.length) % homeSlides.length;
+      homeSlides[current].classList.add('active');
     }
-  }, { passive: true });
-}
 
-// Home carousel
-const homeCarousel = document.querySelector('.carousel');
-if (homeCarousel) {
-  addSwipe(homeCarousel,
-    () => document.querySelector('.carousel-btn.next')?.click(),
-    () => document.querySelector('.carousel-btn.prev')?.click()
-  );
-}
+    function moveCarousel(dir) {
+      showSlide(current + dir);
+    }
 
-// Content slideshows
-document.querySelectorAll('.content-slideshow').forEach(slideshow => {
-  addSwipe(slideshow,
-    () => slideshow.querySelector('.content-next')?.click(),
-    () => slideshow.querySelector('.content-prev')?.click()
-  );
-});
+    // ============================================
+    // CONTENT SLIDESHOWS
+    // ============================================
+    document.querySelectorAll('.content-slideshow').forEach(function(slideshow) {
+      const slides = slideshow.querySelectorAll('.content-slide');
+      const dots = slideshow.querySelectorAll('.content-dot');
+      let idx = 0;
 
-</script>
+      function showContentSlide(n) {
+        slides[idx].classList.remove('active');
+        dots[idx].classList.remove('active');
+        idx = (n + slides.length) % slides.length;
+        slides[idx].classList.add('active');
+        dots[idx].classList.add('active');
+      }
 
+      slideshow.querySelector('.content-prev').addEventListener('click', () => showContentSlide(idx - 1));
+      slideshow.querySelector('.content-next').addEventListener('click', () => showContentSlide(idx + 1));
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => showContentSlide(parseInt(dot.dataset.index)));
+      });
+    });
+
+    // ============================================
+    // TABLE OF CONTENTS
+    // ============================================
+    const headings = document.querySelectorAll('.project-content h2');
+    const tocList = document.getElementById('toc-list');
+
+    if (headings.length > 0 && tocList) {
+      headings.forEach((heading, i) => {
+        const id = 'section-' + i;
+        heading.id = id;
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = heading.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+    }
+
+    // ============================================
+    // EXTERNAL LINKS
+    // ============================================
+    document.querySelectorAll('a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+
+    // ============================================
+    // LIGHTBOX
+    // ============================================
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('img:not(.floating-img):not(.project-card img):not(.writing-image img)').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.style.display = 'flex';
+        document.body.classList.add('lightbox-open');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      document.body.classList.remove('lightbox-open');
+    });
+
+    // ============================================
+    // MOBILE NAV
+    // ============================================
+    const toggle = document.getElementById('mobile-nav-toggle');
+    const overlay = document.getElementById('mobile-nav-overlay');
+    const navClose = document.getElementById('mobile-nav-close');
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        overlay.classList.add('open');
+      });
+      navClose.addEventListener('click', () => {
+        overlay.classList.remove('open');
+      });
+      overlay.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          overlay.classList.remove('open');
+        });
+      });
+    }
+
+    // ============================================
+    // SWIPE GESTURES
+    // ============================================
+    function addSwipe(element, onSwipeLeft, onSwipeRight) {
+      let startX = 0;
+      let startY = 0;
+
+      element.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      }, { passive: true });
+
+      element.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - startX;
+        const dy = e.changedTouches[0].clientY - startY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+          if (dx < 0) onSwipeLeft();
+          else onSwipeRight();
+        }
+      }, { passive: true });
+    }
+
+    if (homeCarousel) {
+      addSwipe(homeCarousel,
+        () => document.querySelector('.carousel-btn.next')?.click(),
+        () => document.querySelector('.carousel-btn.prev')?.click()
+      );
+    }
+
+    document.querySelectorAll('.content-slideshow').forEach(slideshow => {
+      addSwipe(slideshow,
+        () => slideshow.querySelector('.content-next')?.click(),
+        () => slideshow.querySelector('.content-prev')?.click()
+      );
+    });
+
+  </script>
 
 </body>
 </html>
