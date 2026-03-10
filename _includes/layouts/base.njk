@@ -18,7 +18,7 @@
     <li><a href="/writing/">Writing</a></li>
     <li><a href="/teaching/">Teaching & Exhibits</a></li>
     <li><a href="/about/">About</a></li>
-    <li><a href="/contact/">Contact</a></li>
+    <li><a href="mailto:hugopilate@gmail.com">Contact</a></li>
   </ul>
   <div id="mobile-nav-bar">
     <a href="/" class="mobile-nav-logo">Hugo Pilate</a>
@@ -33,7 +33,7 @@
     <li><a href="/writing/">Writing</a></li>
     <li><a href="/teaching/">Teaching & Exhibits</a></li>
     <li><a href="/about/">About</a></li>
-    <li><a href="/contact/">Contact</a></li>
+    <li><a href="mailto:hugopilate@gmail.com">Email</a></li>
   </ul>
 </div>
   
@@ -175,7 +175,44 @@ overlay.querySelectorAll('a').forEach(a => {
 });
 }
 
+// ============================================
+// SWIPE GESTURES
+// ============================================
+function addSwipe(element, onSwipeLeft, onSwipeRight) {
+  let startX = 0;
+  let startY = 0;
 
+  element.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+
+  element.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx < 0) onSwipeLeft();
+      else onSwipeRight();
+    }
+  }, { passive: true });
+}
+
+// Home carousel
+const homeCarousel = document.querySelector('.carousel');
+if (homeCarousel) {
+  addSwipe(homeCarousel,
+    () => document.querySelector('.carousel-btn.next')?.click(),
+    () => document.querySelector('.carousel-btn.prev')?.click()
+  );
+}
+
+// Content slideshows
+document.querySelectorAll('.content-slideshow').forEach(slideshow => {
+  addSwipe(slideshow,
+    () => slideshow.querySelector('.content-next')?.click(),
+    () => slideshow.querySelector('.content-prev')?.click()
+  );
+});
 
 </script>
 
