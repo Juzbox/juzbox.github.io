@@ -290,6 +290,10 @@
       );
     }
 
+if (window.innerWidth <= 640) {
+  setInterval(() => showSlide(current + 1), 5000);
+}
+
     document.querySelectorAll('.content-slideshow').forEach(slideshow => {
       addSwipe(slideshow,
         () => slideshow.querySelector('.content-next')?.click(),

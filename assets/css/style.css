@@ -242,6 +242,10 @@ nav a:hover {
   z-index: 0;
 }
 
+.carousel img {
+  cursor: default !important;
+}
+
 .carousel-slide {
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -316,6 +320,15 @@ nav a:hover {
   color: white;
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
+}
+
+.carousel-slide,
+.carousel-slide:hover {
+  background: none;
+  filter: none;
+  border-radius: 0;
+  text-decoration: none;
+  padding: 0;
 }
 
 .carousel-btn {
@@ -1143,6 +1156,11 @@ body.lightbox-open nav {
     object-fit: cover;
   }
   
+ .carousel-caption,
+  .carousel-btn {
+    display: none;
+  }
+
   .content-wrapper { flex-direction: column; }
   
   .right {
