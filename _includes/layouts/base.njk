@@ -65,6 +65,10 @@
       showSlide(current + dir);
     }
 
+    if (window.innerWidth <= 640) {
+      setInterval(() => showSlide(current + 1), 5000);
+    }
+
     // ============================================
     // CONTENT SLIDESHOWS
     // ============================================
@@ -124,7 +128,7 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 
-    document.querySelectorAll('img:not(.floating-img):not(.project-card img):not(.writing-image img)').forEach(img => {
+    document.querySelectorAll('img:not(.floating-img):not(.project-card-img):not(.writing-image img):not(.carousel-img)').forEach(img => {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
@@ -138,6 +142,13 @@
       lightbox.style.display = 'none';
       document.body.classList.remove('lightbox-open');
     });
+
+    document.querySelectorAll('.carousel-img').forEach(img => {
+  img.style.cursor = 'default';
+  img.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+});
 
     // ============================================
     // MOBILE NAV
@@ -188,10 +199,6 @@
         () => document.querySelector('.carousel-btn.prev')?.click()
       );
     }
-
-if (window.innerWidth <= 640) {
-  setInterval(() => showSlide(current + 1), 5000);
-}
 
     document.querySelectorAll('.content-slideshow').forEach(slideshow => {
       addSwipe(slideshow,

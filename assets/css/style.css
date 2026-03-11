@@ -38,20 +38,20 @@
   --font-about: 'DM Mono', monospace;
 
   --color-bg: #A6FFA4;
-  --color-text: rgb(48, 13, 37, 0.85);
-  --color-muted: rgba(66, 42, 42, 0.5);
+  --color-text: rgb(48, 13, 37, 1);
+  --color-muted: rgba(66, 42, 42, 1);
   --color-accent: #fafa34;
   --color-nav-bg: #e7defc;
   --color-nav-text: rgba(39, 25, 25, 0.93);
   --color-link: rgba(66, 42, 42, 0.85);
   --color-link-visited: rgba(66, 42, 42, 0.6);
 
-  --font-size-base: 1rem;
-  --font-size-sm: 1.1rem;
-  --font-size-xs: 0.9rem;
-  --font-size-h1: 2.5rem;
-  --font-size-h2: 2.5rem;
-  --font-size-h3: 1.1rem;
+  --font-size-base: 1em;
+  --font-size-sm: 1.1em;
+  --font-size-xs: 0.85em;
+  --font-size-h1: 2em;
+  --font-size-h2: 2.5em;
+  --font-size-h3: 1.1em;
 }
 
 /* ============================================
@@ -59,13 +59,15 @@
    ============================================ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html { font-size: 16px; }
+
 /* ============================================
    BASE
    ============================================ */
 body {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: var(--font-size-sm);
+  font-size: 1em;
   background: var(--color-bg);
   color: var(--color-text);
   display: flex;
@@ -337,11 +339,9 @@ nav a:hover {
   background: none;
   border: none;
   color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 10;
+  font-size: 1.5em;
   padding: 0.5rem;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .carousel-btn:hover { opacity: 1; }
@@ -594,7 +594,7 @@ nav a:hover {
   top: 50%;
   transform: translateY(-50%);
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   padding: 0.75rem;
   border-radius: 5%;
   transition: all 0.3s ease;
@@ -611,7 +611,7 @@ nav a:hover {
   background: none;
   color: white;
   filter: none;
-  font-size: 2rem;
+  font-size: 2em;
   padding: 0.75rem; /* matches default — no layout shift */
 }
 
@@ -802,7 +802,7 @@ svg#connections {
 .connection-label {
   position: absolute;
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 0.65em;
   color: var(--color-muted);
   pointer-events: none;
   z-index: 5;
@@ -865,7 +865,7 @@ svg#connections {
 
 .node-tags span {
   font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-size: 0.6em;
   color: var(--color-text);
   background: var(--color-bg);
   padding: 0.1rem 0.4rem;
@@ -922,7 +922,7 @@ svg#connections {
    ============================================ */
 .page-about .content-wrapper {
   font-family: var(--font-body);
-  font-size: 1.2rem;
+  font-size: 1.2em;
   display: flex;
   text-align: center;
   align-items: center;
@@ -1073,7 +1073,7 @@ body.lightbox-open nav {
 
 .writing-title {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.4em;
   font-weight: 500;
   line-height: 1.2;
   margin-right: 4rem;
@@ -1084,7 +1084,7 @@ body.lightbox-open nav {
 .writing-title a:visited,
 .writing-title a:hover {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.4em;
   font-weight: 500;
   line-height: 1.4;
   padding: 0;
@@ -1119,9 +1119,9 @@ body.lightbox-open nav {
 @media (max-width: 1200px) {
 
   :root {
-    --font-size-h1: 1.8rem;
-    --font-size-h2: 1.8rem;
-    --font-size-sm: 1rem;
+    --font-size-h1: 1.8em;
+    --font-size-h2: 1.8em;
+    --font-size-sm: 1em;
   }
 
     #desktop-nav { display: none; }
@@ -1143,7 +1143,12 @@ body.lightbox-open nav {
   .left {
       display: block;
     flex: 0 0 50vh;
-    width: 100%;}
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 0;
+
+  }
 
 
   .carousel,
@@ -1161,7 +1166,10 @@ body.lightbox-open nav {
     display: none;
   }
 
-  .content-wrapper { flex-direction: column; }
+  .content-wrapper { 
+    flex-direction: column; 
+position: relative;
+  }
   
   .right {
     flex: 1;
@@ -1170,6 +1178,12 @@ body.lightbox-open nav {
     margin-top: -8rem;
     min-height: 100vh;
     line-height: 1.6rem;
+    background: linear-gradient(180deg, transparent 0%, var(--color-bg) 8rem);
+  position: relative;
+  z-index: 2;
+
+
+
   }
 
   /* Project page */
@@ -1263,8 +1277,7 @@ body.lightbox-open nav {
   }
 
   .writing-title {
-
-    font-size: 1.2rem;
+    font-size: 1.2em;
     margin-right: 0;
     margin-top: 1rem;
     order: 1;
@@ -1320,7 +1333,7 @@ body.lightbox-open nav {
 
   .page-about .about-content {
     text-align: left;
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   .floating-img { width: 300px; }
@@ -1363,7 +1376,7 @@ body.lightbox-open nav {
 
 #mobile-nav-overlay a {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-weight: 500;
   text-decoration: none;
   color: var(--color-nav-text);
@@ -1383,7 +1396,7 @@ body.lightbox-open nav {
   right: 1rem;
   background: none;
   border: none;
-  font-size: 2.5rem;
+  font-size: 2.5em;
   cursor: pointer;
   color: var(--color-nav-text);
   line-height: 1;
@@ -1392,7 +1405,7 @@ body.lightbox-open nav {
 #mobile-nav-toggle {
   background: none;
   border: none;
-  font-size: 2.2rem;
+  font-size: 2.2em;
   cursor: pointer;
   color: var(--color-nav-text);
   line-height: 1;
@@ -1405,7 +1418,7 @@ body.lightbox-open nav {
   text-decoration: none;
   color: var(--color-nav-text);
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   letter-spacing: 0.05em;
 }
 
@@ -1415,7 +1428,7 @@ body.lightbox-open nav {
   
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1200px) {
   #desktop-nav { display: none; }
   #mobile-nav-bar {
     display: flex;
@@ -1429,4 +1442,3 @@ body.lightbox-open nav {
 
 
 }
-

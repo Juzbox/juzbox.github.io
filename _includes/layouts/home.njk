@@ -5,7 +5,7 @@ layout: layouts/base.njk
   <div class="carousel">
     {% for project in collections.spotlight %}
     <a href="{{ project.url }}" class="carousel-slide {% if loop.first %}active{% endif %}">
-      <img src="{{ project.data.headerimage }}" alt="{{ project.data.title }}" />
+      <img src="{{ project.data.headerimage }}" alt="{{ project.data.title }}" class="carousel-img" />
       <div class="carousel-caption">
         <h2>{{ project.data.title }}</h2>
         <span class="year">{{ project.data.date }}</span>
