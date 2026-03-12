@@ -2,7 +2,7 @@
 layout: layouts/writing.njk
 title: "Fraying the Matrix: A Cyberlocal Dreams Post-Mortem (PART III)"
 description:
-writingType: BLOG POST
+writingType: PROCESS DOCUMENTATION
 commissioner: SELF
 year: "2023"
 link: https://medium.com/@hugopilate/fraying-the-matrix-a-cyberlocal-dreams-post-mortem-part-iii-f43b07a4009f

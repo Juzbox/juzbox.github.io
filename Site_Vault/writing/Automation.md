@@ -2,7 +2,7 @@
 layout: layouts/writing.njk
 title: Automation & Design Sprints
 description:
-writingType: ARTICLE
+writingType: PROCESS DOCUMENTATION
 commissioner: QUICKSAND DISPATCH
 year: "2019"
 link: https://medium.com/hello-qs/automation-design-sprints-e7fdbe88fe89

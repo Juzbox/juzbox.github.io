@@ -14,7 +14,7 @@ role: Design researcher, Creative technologist
 orgs: HDK Valand, Gothenburg University
 funded:
 collaborator: Mourdjen Bari
-location: Gothenburg
+location: Gothenburg, Sweden
 permalink: /projects/counter-twinning-in-gothenburg/
 ---
 # An investigation of Gothenburg’s urban digital twinning ecosystem and its actors’ ability to provide opportunities for meaningful civic engagement.  
