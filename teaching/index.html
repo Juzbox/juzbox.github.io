@@ -39,8 +39,10 @@
   <div class="content-wrapper">
     <div class="three-col-wrapper">
   <div class="col col-1">
-    
-    <h2>TEACHING</h2>
+    <button class="col-toggle">Teaching</button>
+    <div class="col-content">
+      
+      <h2>TEACHING</h2>
 <p><strong>2026</strong>
 Guest faculty in ‘Staging Co-creation&#39; at <a href="https://www.umu.se/en/umea-institute-of-design/">Umeå Institute of Design</a> – Lecture and 3D scanning workshop / Interaction Design MA  </p>
 <p><img src="/assets/img/3Dscanningworkshop.gif" alt="3Dscanningworkshop.gif" /></p>
@@ -77,10 +79,13 @@ Guest faculty in ‘Staging Co-creation&#39; at <a href="https://www.umu.se/en/u
 <hr>
 <p><strong>2017</strong><br>Organization and facilitation of workshop on ‘Primary research for worldbuilding’ at <a href="https://www.artcenter.edu/">Art Center College of Design</a> – Workshop and project supervisions / Entertainment Design BA</p>
 
+    </div>
   </div>
   <div class="col col-2">
-    
-    <h2>EXHIBITS &amp; TALKS</h2>
+    <button class="col-toggle">Exhibits</button>
+    <div class="col-content">
+      
+      <h2>EXHIBITS &amp; TALKS</h2>
 <p><strong>2025</strong>
 Exhibitor at Architecture Film Festival Rotterdam / Artwork: <a href="https://whatamess.city/lagares-do-alvara/">Lagares do Alvará</a> (with What A Mess) / Rotterdam, NL</p>
 <p><div class="content-slideshow">
@@ -136,10 +141,13 @@ Exhibitor at the Maker Faire Bay Area / Project <a href="https://www.youtube.com
 <p><strong>2012</strong>
 Finalist for the Lexus Design Award with the <a href="https://www.designboom.com/project/windforming/">Windforming</a> project, Online</p>
 
+    </div>
   </div>
   <div class="col col-3">
-    
-    <h2>RECOGNITIONS</h2>
+    <button class="col-toggle">Recognitions</button>
+    <div class="col-content">
+      
+      <h2>RECOGNITIONS</h2>
 <p><strong>2025</strong>
 Shortlisted at Milan Machinima Film Festival / Artwork: <a href="https://filmfreeway.com/InSearchofProductiveFriction">In Search of Productive Friction</a> (with What a Mess) / Los Angeles, USA  </p>
 <p><div class="content-slideshow">
@@ -201,8 +209,26 @@ Shortlisted for the <a href="https://distributeddesign.eu/awards/entries/t-furni
   <div class="content-dots"><div class="content-dot active" data-index="0"></div><div class="content-dot " data-index="1"></div><div class="content-dot " data-index="2"></div></div>
 </div></p>
 
+    </div>
   </div>
 </div>
+
+<script>
+if (window.innerWidth <= 1200) {
+  document.querySelectorAll('.col-toggle').forEach(btn => {
+    const content = btn.nextElementSibling;
+    const heading = content.querySelector('h1, h2, h3');
+    if (heading) {
+      btn.textContent = heading.textContent;
+      heading.style.display = 'none';
+    }
+    content.classList.add('collapsed');
+    btn.addEventListener('click', () => {
+      content.classList.toggle('collapsed');
+    });
+  });
+}
+</script>
   </div>
 
   <div id="lightbox" style="display:none;">
