@@ -3,15 +3,41 @@ layout: layouts/base.njk
 ---
 <div class="three-col-wrapper">
   <div class="col col-1">
-    {% set col1 %}{% include "../../Site_Vault/columns/teaching-col.md" %}{% endset %}
-    {{ col1 | markdown | safe }}
+    <button class="col-toggle">Teaching</button>
+    <div class="col-content">
+      {% set col1 %}{% include "../../Site_Vault/columns/teaching-col.md" %}{% endset %}
+      {{ col1 | markdown | safe }}
+    </div>
   </div>
   <div class="col col-2">
-    {% set col2 %}{% include "../../Site_Vault/columns/exhibits-col.md" %}{% endset %}
-    {{ col2 | markdown | safe }}
+    <button class="col-toggle">Exhibits</button>
+    <div class="col-content">
+      {% set col2 %}{% include "../../Site_Vault/columns/exhibits-col.md" %}{% endset %}
+      {{ col2 | markdown | safe }}
+    </div>
   </div>
   <div class="col col-3">
-    {% set col3 %}{% include "../../Site_Vault/columns/recognitions-col.md" %}{% endset %}
-    {{ col3 | markdown | safe }}
+    <button class="col-toggle">Recognitions</button>
+    <div class="col-content">
+      {% set col3 %}{% include "../../Site_Vault/columns/recognitions-col.md" %}{% endset %}
+      {{ col3 | markdown | safe }}
+    </div>
   </div>
 </div>
+
+<script>
+if (window.innerWidth <= 1200) {
+  document.querySelectorAll('.col-toggle').forEach(btn => {
+    const content = btn.nextElementSibling;
+    const heading = content.querySelector('h1, h2, h3');
+    if (heading) {
+      btn.textContent = heading.textContent;
+      heading.style.display = 'none';
+    }
+    content.classList.add('collapsed');
+    btn.addEventListener('click', () => {
+      content.classList.toggle('collapsed');
+    });
+  });
+}
+</script>

@@ -4,11 +4,10 @@ description: Interactive prototypes used to document and investigate the city's 
 date: "2025"
 headerimage: /assets/img/Screenshot-2024-12-17-170301.png
 tags:
-  - work
-  - spotlight
-  - projects
-  - design_strategy
-  - critical_spatial_practice
+  - designresearch
+  - participatorydesign
+  - gamingculture
+  - urbanfutures
 layout: layouts/projects.njk
 introduction: An investigation of Gothenburg’s urban digital twinning ecosystem and its actors’ ability to provide opportunities for meaningful civic engagement.
 role: Design researcher, Creative technologist

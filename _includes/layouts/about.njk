@@ -19,24 +19,22 @@ layout: layouts/base.njk
     let angle = 0;
     let rotationSpeed = 0.3;
 
-    floatingImg.addEventListener('mouseenter', () => rotationSpeed = 8);
-    floatingImg.addEventListener('mouseleave', () => rotationSpeed = 0.3);
+    if (window.innerWidth > 1200) {
+      floatingImg.addEventListener('mouseenter', () => rotationSpeed = 8);
+      floatingImg.addEventListener('mouseleave', () => rotationSpeed = 0.3);
+    }
 
     function animateFloat() {
       x += vx;
       y += vy;
       angle += rotationSpeed;
-
       if (x <= 0 || x >= window.innerWidth - floatingImg.width) vx *= -1;
       if (y <= 0 || y >= window.innerHeight - floatingImg.height) vy *= -1;
-
       floatingImg.style.left = x + 'px';
       floatingImg.style.top = y + 'px';
       floatingImg.style.transform = `rotate(${angle}deg)`;
-
       requestAnimationFrame(animateFloat);
     }
-
     animateFloat();
   }
 </script>

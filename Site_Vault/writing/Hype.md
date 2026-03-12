@@ -5,9 +5,8 @@ description:
 writingType: BLOG POST
 commissioner: SELF
 year: "2020"
-link: https://medium.com/balancing-hype-and-accountability-bc3ca52a494b
+link: https://medium.com/@hugopilate/balancing-hype-and-accountability-bc3ca52a494b
 tags:
-  - writing
 permalink:
-headerimage: /assets/img/paperlink.png
+headerimage: /assets/img/Screenshot 2026-03-10 073736.png
 ---

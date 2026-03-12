@@ -4,11 +4,10 @@ description: A playbook for culturally diverse worldbuilding.
 date: "2023"
 headerimage: /assets/img/IMG_6480 (1).jpg
 tags:
-  - work
   - spotlight
-  - projects
-  - speculativedesign
   - participatorydesign
+  - worldbuilding
+  - gamingculture
 layout: layouts/projects.njk
 introduction: How might the imagination of desirable futures rooted in overlooked territories and their communities be encouraged?
 role: Design researcher, Facilitator, Project coordination

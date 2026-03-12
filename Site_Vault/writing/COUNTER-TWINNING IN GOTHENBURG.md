@@ -8,9 +8,7 @@ commissioner: HDK-VALAND
 year: "2025"
 link: https://gupea.ub.gu.se/handle/2077/89928
 tags:
-  - participatorydesign
-  - counter-cartography
-headerimage: /assets/img/paperlink.png
+headerimage: /assets/img/T1_demo.gif
 ---
 
 

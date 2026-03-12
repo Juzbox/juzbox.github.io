@@ -4,10 +4,7 @@ description: An investigation into the use and aspirations surrounding portable 
 date: "2018"
 headerimage: /assets/img/04_solar.gif
 tags:
-  - work
-  - spotlight
-  - participatorydesign
-  - digital_scenography
+  - designresearch
 layout: layouts/projects.njk
 introduction: How might access to solar-powered products improve the lives of households living on the edge of the electrical grid?
 role: Design Researcher, Project Coordination

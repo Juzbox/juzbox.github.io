@@ -4,10 +4,10 @@ description: A workshop designed to consolidate relations between stakeholders o
 date: "2024"
 headerimage: /assets/img/IMG_6825.jpg
 tags:
-  - work
   - spotlight
-  - design_strategy
+  - designresearch
   - participatorydesign
+  - urbanfutures
 layout: layouts/projects.njk
 introduction: In light of geopolitical instability and the impact of global warming on food production, how might Gothenburg support the strengthening of its local food ecosystems?
 role: Facilitator

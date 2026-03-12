@@ -5,9 +5,8 @@ description:
 writingType: ARTICLE
 commissioner: QUICKSAND DISPATCH
 year: "2019"
-link: https://medium.com/automation-design-sprints-e7fdbe88fe89
+link: https://medium.com/hello-qs/automation-design-sprints-e7fdbe88fe89
 tags:
-  - writing
 permalink:
-headerimage: /assets/img/paperlink.png
+headerimage: /assets/img/1_ynX7Frat1wivrmsfkAMiTQ.webp
 ---

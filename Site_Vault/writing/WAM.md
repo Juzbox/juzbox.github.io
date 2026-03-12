@@ -5,9 +5,8 @@ description:
 writingType: BLOG POST
 commissioner: SELF
 year: "2023"
-link: https://medium.com/what-a-mess-a-tale-of-collaborative-photogrammetry-6f1f16a8c4b7
+link: https://medium.com/@hugopilate/what-a-mess-a-tale-of-collaborative-photogrammetry-6f1f16a8c4b7
 tags:
-  - writing
 permalink:
-headerimage: /assets/img/paperlink.png
+headerimage: /assets/img/1_-sA-uITZK-4uiApZJuvvIg.gif
 ---

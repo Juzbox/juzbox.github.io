@@ -4,10 +4,10 @@ description: A workshop on the future of Eindhoven's Gasfabriek facilitated thro
 date: "2021"
 headerimage: /assets/img/team001.gif
 tags:
-  - work
   - spotlight
   - participatorydesign
-  - digital_scenography
+  - urbanfutures
+  - worldbuilding
 layout: layouts/projects.njk
 introduction: How can values like conviviality be used to anchor the imagination of hopeful futures?
 role: Facilitator, Design Researcher
@@ -22,7 +22,7 @@ permalink: /projects/convivialcity/
 
 :::carousel
 ![[Scenario1.gif]]
-![[Scenario2.png]]
+![[Scenario2.gif]]
 ![[Scenario3.gif]]
 :::
 

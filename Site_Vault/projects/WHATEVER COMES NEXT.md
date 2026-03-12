@@ -4,10 +4,10 @@ description: A live performance mixing live generated visuals and site-based ref
 date: "2024"
 headerimage: /assets/img/_DSC0973.jpg
 tags:
-  - work
-  - spotlight
-  - participatorydesign
-  - digital_scenography
+  - designresearch
+  - gamingculture
+  - urbanfutures
+  - worldbuilding
 layout: layouts/projects.njk
 introduction: How can imagining the future of a single contested site like Smedjegatan 5, help reflect on the tensions shaping the city of Gothenburg?
 role: Design Researcher

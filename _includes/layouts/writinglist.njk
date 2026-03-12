@@ -8,41 +8,30 @@ layout: layouts/base.njk
   <div class="writing-table-body">
     {% for piece in collections.writing | sort(false, false, 'data.year') | reverse %}
     <div class="writing-row">
-
-      {% if piece.url and piece.data.permalink != false and piece.data.permalink != "false" %}
       <div class="writing-image {% if piece.data.link %}writing-image-external{% endif %}">
-  {% if piece.data.headerimage %}
-    {% if piece.url %}
-      <img src="{{ piece.data.headerimage }}" alt="{{ piece.data.title }}" />
-    {% else %}
-      <img src="{{ piece.data.headerimage }}" alt="{{ piece.data.title }}" />
-    {% endif %}
-  {% else %}
-    <img src="/assets/img/paperlink.png" alt="" class="default-writing-img" />
-  {% endif %}
-</div>
-      {% endif %}
-
+        {% if piece.data.headerimage %}
+          <img src="{{ piece.data.headerimage }}" alt="{{ piece.data.title }}" />
+        {% else %}
+          <img src="/assets/img/paperlink.png" alt="" class="default-writing-img" />
+        {% endif %}
+      </div>
       <span class="writing-title">
-  {% if piece.data.link %}
-    <a href="{{ piece.data.link }}" target="_blank" rel="noopener noreferrer">{{ piece.data.title }} ↗</a>
-  {% elif piece.url %}
-    <a href="{{ piece.url }}">{{ piece.data.title }}</a>
-  {% else %}
-    {{ piece.data.title }}
-  {% endif %}
-</span>
-
+        {% if piece.data.link %}
+          <a href="{{ piece.data.link }}" target="_blank" rel="noopener noreferrer">{{ piece.data.title }} ↗</a>
+        {% elif piece.url %}
+          <a href="{{ piece.url }}">{{ piece.data.title }}</a>
+        {% else %}
+          {{ piece.data.title }}
+        {% endif %}
+      </span>
       <span class="writing-type">{{ piece.data.writingType }}</span>
       <span class="writing-commissioner">{{ piece.data.commissioner }}</span>
       <span class="writing-year">{{ piece.data.year }}</span>
-
-
-
+      <div class="writing-meta-row">
+        <span>{{ piece.data.writingType }}</span>
+        <span>{{ piece.data.year }}</span>
+      </div>
     </div>
-
-
-
     {% endfor %}
   </div>
 </div>

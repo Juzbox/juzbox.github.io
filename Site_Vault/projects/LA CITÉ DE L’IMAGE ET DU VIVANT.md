@@ -4,11 +4,10 @@ description: An online 3D space and strategy proposal for the programming of the
 date: "2023"
 headerimage: /assets/img/CDI_Preview0021.gif
 tags:
-  - work
   - spotlight
-  - design_strategy
-  - participatorydesign
-  - digital_scenography
+  - designresearch
+  - gamingculture
+  - urbanfutures
 layout: layouts/projects.njk
 introduction: How must image-making crafts and their education be reimagined in light of recently emerging digital possibilities?
 role: UX Designer, Design Research
