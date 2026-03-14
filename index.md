@@ -20,3 +20,5 @@ Design practitioner specialized in [design research](/projects/?tag=designresear
   - Co-produced an EU-funded [🦑 playbook on worldbuilding](/projects/turfuplaybook/) for young adults"
   - Exhibited at the [🚃 Architecture Film Festival](https://www.affr.nl/en/film/lagares-do-alvara-2/) in Rotterdam as part of [🪨 WHATAMESS](https://whatamess.city/), an artist duo I co-founded with Pedro Gil Farias.
 
+
+

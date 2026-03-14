@@ -29,3 +29,4 @@ He has taught a variety of design-led inquiry formats at Chalmers University of 
 
 
 Past clients: [Quicksand Design Studio](https://quicksand.co.in/), [BouwhulpGroep](https://www.bouwhulp.nl/), [PullExperience](https://www.pullexperience.com/), [Two Bit Circus](https://twobitcircus.com/), [Plug-In-City](https://www.plugincity.nl/), [STRP Festival](https://strp.nl/), [PLACE Network](https://place-network.org/), [the Ebco](https://diginsights.com/), [Sterling Brands](https://www.sterlingbrands.com/).
+
