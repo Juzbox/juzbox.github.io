@@ -513,23 +513,7 @@
       animateFloat();
     }
 
-    // ============================================
-    // TEACHING COLLAPSIBLE COLUMNS
-    // ============================================
-    if (window.innerWidth <= 1200) {
-      document.querySelectorAll('.col-toggle').forEach(btn => {
-        const content = btn.nextElementSibling;
-        const heading = content.querySelector('h1, h2, h3');
-        if (heading) {
-          btn.textContent = heading.textContent;
-          heading.style.display = 'none';
-        }
-        content.classList.add('collapsed');
-        btn.addEventListener('click', () => {
-          content.classList.toggle('collapsed');
-        });
-      });
-    }
+
 
     // ============================================
     // EXTERNAL LINKS
