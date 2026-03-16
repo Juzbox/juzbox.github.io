@@ -12,7 +12,9 @@ bodyClass: page-projects
 <div class="project-grid" id="project-grid">
   {% for project in collections.projects %}
   <div class="project-card" data-tags="{{ project.data.tags | join(',') }}">
-    <a href="{{ project.url }}"><img src="{{ project.data.headerimage }}" alt="{{ project.data.title }}" /></a>
+   <a href="{{ project.url }}">
+  <img src="{{ project.data.headerimage }}" alt="{{ project.data.title }}" class="project-card-img" />
+</a>
     <div class="project-card-info">
       <a href="{{ project.url }}"><h2>{{ project.data.title }}</h2></a>
       <span class="year">{{ project.data.date }}</span>

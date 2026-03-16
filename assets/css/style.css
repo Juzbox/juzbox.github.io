@@ -75,8 +75,8 @@
   --color-col-3: #c3e5ff;
   --color-bg-project: #feffdb;
 
-  --font-size-base: 1em;
-  --font-size-sm: 1em;
+  --font-size-base: 0.8em;
+  --font-size-sm: 0.8em;
   --font-size-xs: 0.8em;
   --font-size-h1: 2.3em;
   --font-size-h2: 2.3em;
@@ -97,7 +97,6 @@ html { font-size: 16px; }
 body {
   font-family: var(--font-body);
   font-weight: 100;
-  font-size: 1em;
   background: var(--color-bg-home);
   color: var(--color-text);
   display: flex;
@@ -195,8 +194,7 @@ li {
 li::before {
   content: "🡦";
   padding-right: 5px;
-  
-
+  font-family: Arial, sans-serif;
 }
 
 li a {
@@ -1038,7 +1036,7 @@ svg#connections {
    ============================================ */
 .page-about .content-wrapper {
   font-family: var(--font-body);
-  font-size: 1.1em;
+  font-size: 1em;
   display: flex;
   text-align: center;
   align-items: center;
