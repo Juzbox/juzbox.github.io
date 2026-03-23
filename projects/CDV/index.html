@@ -21,12 +21,12 @@
     </ul>
     <div id="mobile-nav-bar">
       <a href="/" class="mobile-nav-logo">Hugo Pilate</a>
-      <button id="mobile-nav-toggle">+</button>
+      <button id="mobile-nav-toggle">☰</button>
     </div>
   </nav>
 
   <div id="mobile-nav-overlay">
-    <button id="mobile-nav-close">×</button>
+    <button id="mobile-nav-close">✕</button>
     <ul>
       <li><a href="/projects/">Projects</a></li>
       <li><a href="/writing/">Writing</a></li>
@@ -337,36 +337,6 @@
       });
     }
 
-    // ============================================
-    // FLOATING IMAGE (ABOUT PAGE)
-    // ============================================
-    const floatingImg = document.querySelector('.floating-img');
-    if (floatingImg) {
-      let fx = Math.random() * (window.innerWidth - 200);
-      let fy = Math.random() * (window.innerHeight - 200);
-      let vx = 0.6;
-      let vy = 0.4;
-      let angle = 0;
-      let rotationSpeed = 0.3;
-
-      if (window.innerWidth > 1200) {
-        floatingImg.addEventListener('mouseenter', () => rotationSpeed = 8);
-        floatingImg.addEventListener('mouseleave', () => rotationSpeed = 0.3);
-      }
-
-      function animateFloat() {
-        fx += vx;
-        fy += vy;
-        angle += rotationSpeed;
-        if (fx <= 0 || fx >= window.innerWidth - floatingImg.width) vx *= -1;
-        if (fy <= 0 || fy >= window.innerHeight - floatingImg.height) vy *= -1;
-        floatingImg.style.left = fx + 'px';
-        floatingImg.style.top = fy + 'px';
-        floatingImg.style.transform = `rotate(${angle}deg)`;
-        requestAnimationFrame(animateFloat);
-      }
-      animateFloat();
-    }
 
 
 

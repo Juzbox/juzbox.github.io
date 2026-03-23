@@ -21,12 +21,12 @@
     </ul>
     <div id="mobile-nav-bar">
       <a href="/" class="mobile-nav-logo">Hugo Pilate</a>
-      <button id="mobile-nav-toggle">+</button>
+      <button id="mobile-nav-toggle">☰</button>
     </div>
   </nav>
 
   <div id="mobile-nav-overlay">
-    <button id="mobile-nav-close">×</button>
+    <button id="mobile-nav-close">✕</button>
     <ul>
       <li><a href="/projects/">Projects</a></li>
       <li><a href="/writing/">Writing</a></li>
@@ -94,8 +94,8 @@
   <h1></h1>
   <p></p>
   <br>
-  <h1>DESIGN RESEARCHER
-& DIGITAL ARTIST</h1>
+  <h1>DESIGN RESEARCHER<br>
+& DIGITAL ARTIST</h1><br><br>
 <p>Design practitioner specialized in <a href="/projects/?tag=designresearch">design research</a>, <a href="/projects/?tag=participatorydesign">participatory methods</a>, and <a href="/projects/?tag=worldbuilding">worldbuilding</a>. These tools help me creatively investigate <a href="/projects/?tag=gamingculture">digital cultures</a> and strive to support the emergence of <a href="/projects/?tag=urbanfutures">just and livable urban futures</a>.</p>
 <p></p>
 <p></p>
@@ -302,36 +302,6 @@
       });
     }
 
-    // ============================================
-    // FLOATING IMAGE (ABOUT PAGE)
-    // ============================================
-    const floatingImg = document.querySelector('.floating-img');
-    if (floatingImg) {
-      let fx = Math.random() * (window.innerWidth - 200);
-      let fy = Math.random() * (window.innerHeight - 200);
-      let vx = 0.6;
-      let vy = 0.4;
-      let angle = 0;
-      let rotationSpeed = 0.3;
-
-      if (window.innerWidth > 1200) {
-        floatingImg.addEventListener('mouseenter', () => rotationSpeed = 8);
-        floatingImg.addEventListener('mouseleave', () => rotationSpeed = 0.3);
-      }
-
-      function animateFloat() {
-        fx += vx;
-        fy += vy;
-        angle += rotationSpeed;
-        if (fx <= 0 || fx >= window.innerWidth - floatingImg.width) vx *= -1;
-        if (fy <= 0 || fy >= window.innerHeight - floatingImg.height) vy *= -1;
-        floatingImg.style.left = fx + 'px';
-        floatingImg.style.top = fy + 'px';
-        floatingImg.style.transform = `rotate(${angle}deg)`;
-        requestAnimationFrame(animateFloat);
-      }
-      animateFloat();
-    }
 
 
 
