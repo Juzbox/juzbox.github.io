@@ -41,7 +41,7 @@ layout: layouts/base.njk
 <p class="site-credits">
   Last updated on <strong id="last-updated"></strong>. 
   Built using a customised version of <a href="https://www.11ty.dev/">11ty ↗</a> and <a href="https://obsidian.md/">Obsidian ↗</a> 
-  with <a href="https://www.grillitype.com/typeface/gt-cinetype">GT Cinetype ↗</a> and careful guidance of <a href="https://salilparekh.work/">Salil Parekh</a>. 
+  with <a href="https://www.grillitype.com/typeface/gt-cinetype">GT Cinetype ↗</a> and careful guidance from <a href="https://salilparekh.work/">Salil Parekh</a>. 
 </p>
 
 </div>
@@ -113,27 +113,29 @@ if (floatingImg) {
   });
 
   // Touch drag
-  floatingImg.addEventListener('touchstart', (e) => {
-    dragging = true;
-    offsetX = e.touches[0].clientX - x;
-    offsetY = e.touches[0].clientY - y;
-    e.preventDefault();
-  }, { passive: false });
+  function onTouchMove(e) {
+  if (!dragging) return;
+  x = e.touches[0].clientX - offsetX;
+  y = e.touches[0].clientY - offsetY;
+  e.preventDefault();
+}
 
-  document.addEventListener('touchmove', (e) => {
-    if (!dragging) return;
-    x = e.touches[0].clientX - offsetX;
-    y = e.touches[0].clientY - offsetY;
-    e.preventDefault();
-  }, { passive: false });
+floatingImg.addEventListener('touchstart', (e) => {
+  dragging = true;
+  offsetX = e.touches[0].clientX - x;
+  offsetY = e.touches[0].clientY - y;
+  document.addEventListener('touchmove', onTouchMove, { passive: false });
+  e.preventDefault();
+}, { passive: false });
 
-  document.addEventListener('touchend', () => {
-    if (dragging) {
-      dragging = false;
-      vx = (Math.random() - 0.5) * 2;
-      vy = (Math.random() - 0.5) * 2;
-    }
-  });
+document.addEventListener('touchend', () => {
+  if (dragging) {
+    dragging = false;
+    vx = (Math.random() - 0.5) * 2;
+    vy = (Math.random() - 0.5) * 2;
+    document.removeEventListener('touchmove', onTouchMove);
+  }
+});
 
   function animateFloat() {
     if (!dragging) {
@@ -156,7 +158,7 @@ if (floatingImg) {
 
 document.querySelectorAll('a').forEach(link => {
   const href = link.getAttribute('href');
-  if (href && !href.startsWith('#') && !href.startsWith('mailto:')) {
+  if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('/')) {
     link.setAttribute('target', '_blank');
     link.setAttribute('rel', 'noopener noreferrer');
   }

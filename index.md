@@ -3,8 +3,8 @@ layout: layouts/home.njk
 
 ---
 
-<h1>DESIGN RESEARCHER
-& DIGITAL ARTIST</h1>
+<h1>DESIGN RESEARCHER<br>
+& DIGITAL ARTIST</h1><br><br>
 
 Design practitioner specialized in [design research](/projects/?tag=designresearch), [participatory methods](/projects/?tag=participatorydesign), and [worldbuilding](/projects/?tag=worldbuilding). These tools help me creatively investigate [digital cultures](/projects/?tag=gamingculture) and strive to support the emergence of [just and livable urban futures](/projects/?tag=urbanfutures). 
 

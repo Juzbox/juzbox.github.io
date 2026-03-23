@@ -46,12 +46,7 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Cinetype';
-  src: url('/assets/fonts/GT-Cinetype-Bold-Trial.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-}
+
 
 /* ============================================
    DESIGN TOKENS
@@ -75,9 +70,9 @@
   --color-col-3: #c3e5ff;
   --color-bg-project: #feffdb;
 
-  --font-size-base: 0.8em;
-  --font-size-sm: 0.8em;
-  --font-size-xs: 0.8em;
+  --font-size-base: 1.1em;
+  --font-size-sm: 0.9em;
+  --font-size-xs: 0.9em;
   --font-size-h1: 2.3em;
   --font-size-h2: 2.3em;
   --font-size-h3: 1.1em;
@@ -129,7 +124,7 @@ strong {
  
   font-size: var(--font-size-xs);
   color: var(--color-muted);
- 
+ line-height: 1;
   text-align: center;
 }
 
@@ -185,16 +180,21 @@ ul {
 
 li {
   padding-left: 1em;
-  text-indent: -1em;
- 
+  text-indent: -1.2em;
   line-height: 1.6;
 
 }
-
+/*
 li::before {
   content: "🡦";
   padding-right: 5px;
   font-family: Arial, sans-serif;
+}*/
+
+li::before {
+  content: "▸";
+  padding-right: 5px;
+ 
 }
 
 li a {
@@ -277,7 +277,7 @@ nav a:hover {
   padding: 0 10%;
   gap: 1rem;
   list-style: none;
-  font-size: 1.2em;
+ font-size: var(--font-size-base);
 }
 
 /* ============================================
@@ -745,7 +745,7 @@ background: rgba(255, 255, 255, 1);
    ============================================ */
 .list-header {
   position: fixed;
-  top: 3rem;
+  top: 2.2rem;
 
   left: 50%;
   transform: translateX(-50%);
@@ -754,6 +754,7 @@ background: rgba(255, 255, 255, 1);
   z-index: 90;
   background: var(--color-list);
   padding: 1rem 2rem 5rem;
+     padding-top: 2rem;
 
   display: flex;
   flex-direction: column;
@@ -1061,6 +1062,7 @@ svg#connections {
   z-index: 1;
   transform-origin: center center;
   cursor: default;
+  pointer-events: auto;
 }
 
 /* ============================================
@@ -1261,12 +1263,6 @@ Socials links
 }
 
 #mobile-nav-bar { display: none; }
-#mobile-nav-overlay { display: none; }
-
-
-
-
-#mobile-nav-bar { display: none; }
 
 #mobile-nav-overlay {
   display: none;
@@ -1313,7 +1309,8 @@ Socials links
   right: 1rem;
   background: none;
   border: none;
-  font-size: 2.5em;
+  font-weight: 300;  /* ← weight */
+  font-size: 1.5em;
   cursor: pointer;
   color: var(--color-nav-text);
   line-height: 1;
@@ -1321,22 +1318,26 @@ Socials links
 
 #mobile-nav-toggle {
   background: none;
+   font-weight: 300;  /* ← weight */
   border: none;
-  font-size: 2.2em;
+  font-size:1.2em;
   cursor: pointer;
   color: var(--color-nav-text);
   line-height: 1;
   padding: 0;
 }
 
+/* Edit Hugo Pilate title here */
 .mobile-nav-logo {
   font-family: var(--font-heading);
-  font-weight: 500;
+  font-weight: 500;  /* ← weight */
+   text-transform: uppercase;
   text-decoration: none;
-  color: var(--color-nav-text);
-  /*text-transform: uppercase;*/
-  font-size: 1.2em;
+  color: var(--color-nav-text);  /* ← color */
+  font-size: 1.2em;  /* ← size */
   letter-spacing: 0.05em;
+
+
 }
 
 .mobile-nav-logo:hover {
@@ -1344,23 +1345,12 @@ Socials links
   filter: none;
 }
 
-
-.writing-meta-row {
-  display: none;
-}
+.writing-meta-row { display: none; }
 
 
-/* ============================================
-   RESPONSIVE — MOBILE
-   ============================================ */
+
+
 @media (max-width: 1200px) {
-
-  :root {
-    --font-size-h1: 1.8em;
-    --font-size-h2: 1.8em;
-    --font-size-sm: 1em;
-  }
-
   /* Nav */
   #desktop-nav { display: none; }
   #mobile-nav-bar {
@@ -1368,18 +1358,13 @@ Socials links
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    z-index: 100;
+
   }
 
-  nav { padding: 0.4rem 1rem; }
-  nav ul {
-    gap: 1rem;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    .carousel-dots {
+    bottom: 6rem;
   }
-  nav ul::-webkit-scrollbar { display: none; }
-  nav li { white-space: nowrap; }
 
   /* Home */
   .left {
@@ -1488,8 +1473,12 @@ Socials links
     padding: 0 1rem 4rem;
   }
 
-  .list-header { padding: 0.75rem 1rem 4rem; }
-  .project-card img { height: 140px; }
+  .list-header { padding: 0.75rem 1rem 4rem; 
+
+   padding-top: 2rem;
+
+  }
+  .project-card img { height: 210px; }
 
   /* Writing table */
 .writing-table {
@@ -1617,7 +1606,8 @@ Socials links
   }
 
   .floating-img { 
-    width: 300px; 
+    width: 300px;
+    
   }
 
   /* Network */
