@@ -136,10 +136,8 @@ eleventyConfig.addTransform("collaborator-links", function(content, outputPath) 
   // ============================================
   eleventyConfig.configureErrorReporting({ allowMissingExtensions: true });
 
-  const isProduction = process.env.NODE_ENV === 'production';
-
   return {
-    pathPrefix: isProduction ? "/HP_site/" : "/"
+    pathPrefix: "/"
   };
 
 
