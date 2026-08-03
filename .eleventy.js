@@ -9,10 +9,29 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy({ "HP_vault/Images": "assets/img" });
 
+
+
   // ============================================
   // MARKDOWN FILTER
   // ============================================
   eleventyConfig.addFilter("markdown", (content) => marked.parse(content));
+
+
+  // ============================================
+  // TAG FORMAT FILTER
+  // ============================================
+  eleventyConfig.addFilter('formatTag', (tag) => {
+    const map = {
+      'gamingculture': 'GAMING CULTURE',
+      'uxdesign': 'UX DESIGN',
+      'designresearch': 'DESIGN RESEARCH',
+      'urbanfutures': 'URBAN FUTURES',
+      'worldbuilding': 'WORLDBUILDING',
+      'participatorydesign': 'PARTICIPATORY DESIGN',
+    };
+    return map[tag] || tag.toUpperCase();
+  });
+
 
   // ============================================
   // 1. OBSIDIAN IMAGE & PDF TRANSFORM
@@ -84,13 +103,15 @@ eleventyConfig.addTransform("collaborator-links", function(content, outputPath) 
   // ============================================
   // COLLECTIONS
   // ============================================
-  eleventyConfig.addCollection("spotlight", function(collectionApi) {
-    return collectionApi.getFilteredByTag("spotlight");
-  });
-
   eleventyConfig.addCollection("projects", function(collectionApi) {
     return collectionApi.getFilteredByTag("projects")
+      .filter(item => item.data.permalink !== false)
       .sort((a, b) => parseInt(b.data.date) - parseInt(a.data.date));
+  });
+
+  eleventyConfig.addCollection("spotlight", function(collectionApi) {
+    return collectionApi.getFilteredByTag("spotlight")
+      .filter(item => item.data.permalink !== false);
   });
 
   eleventyConfig.addCollection("design strategy", function(collectionApi) {
@@ -120,4 +141,14 @@ eleventyConfig.addTransform("collaborator-links", function(content, outputPath) 
   return {
     pathPrefix: isProduction ? "/HP_site/" : "/"
   };
+
+
+eleventyConfig.addTransform("debug-content", function(content, outputPath) {
+  if (outputPath && outputPath.endsWith("algoethiques/index.html")) {
+    console.log("=== DEBUG ===");
+    console.log(content.substring(0, 3000));
+  }
+  return content;
+});
+  
 }

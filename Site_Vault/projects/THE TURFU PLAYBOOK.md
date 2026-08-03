@@ -1,7 +1,7 @@
 ---
 title: THE TURFU PLAYBOOK
 description: A playbook for culturally diverse worldbuilding.
-date: "2023"
+date: "2025"
 headerimage: /assets/img/IMG_6480 (1).jpg
 tags:
   - spotlight

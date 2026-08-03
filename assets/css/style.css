@@ -25,11 +25,13 @@
 }
 
 @font-face {
-  font-family: 'Velvelyne';
-  src: url('/assets/fonts/Velvelyne-Regular.otf') format('opentype');
-  font-weight: 300;
+  font-family: 'PPValve';
+  src: url('/assets/fonts/PPValve-PlainExtrabold.otf') format('opentype');
+  font-weight: 500;
   font-style: normal;
 }
+
+
 
 @font-face {
   font-family: 'Anthony';
@@ -54,13 +56,13 @@
 :root {
   --font-heading: 'Cinetype', sans-serif;
   --font-body: 'Cinetype', sans-serif;
-  --font-about: 'Anthony', sans-serif;
+  --font-about: 'PPValve', sans-serif;
 
  
   --color-bg-home: #caffb8;
   --color-list: #feffdb;
   --color-text: rgb(48, 13, 37, 1);
-  --color-accent: #4F0667;
+  --color-accent: #1a5c5c;
   --color-nav-bg: #e7defc;
   --color-nav-text: rgba(39, 25, 25, 0.93);
   --color-link-visited: rgba(66, 42, 42, 0.6);
@@ -70,13 +72,15 @@
   --color-col-3: #c3e5ff;
   --color-bg-project: #feffdb;
 
-  --font-size-base: 1.1em;
-  --font-size-sm: 0.9em;
+  --font-size-base: 1.2em;
+  --font-size-sm: 1em;
   --font-size-xs: 0.9em;
-  --font-size-h1: 2.3em;
+  --font-size-h1: 4em;
   --font-size-h2: 2.3em;
   --font-size-h3: 1.1em;
-  --font-size-h2home: 4em;
+  --font-size-h2home: 6em;
+   --font-size-h2homecarousel: 1.8
+   em;
 }
 
 /* ============================================
@@ -144,7 +148,7 @@ a:visited { color: var(--color-link-visited); }
 
 a:hover {
   /*font-family: var(--font-about);*/
-  color: var(--color-text);
+  color: var(--color-accent);
   background: #ffffff;
   border-radius: 1rem;
   padding: 0.3rem; /* matches default — no layout shift */
@@ -203,6 +207,16 @@ li a {
 
 li a:hover {
   text-decoration: none;
+  color: var(--color-accent);
+}
+
+.basket-img {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* ============================================
@@ -238,7 +252,7 @@ nav a:visited {
 }
 
 nav a:hover {
-  color: var(--color-text);
+  color: var(--color-accent);
   background: #ffffff;
   border-radius: 2rem;
   padding: 0.3rem;
@@ -256,7 +270,7 @@ nav a:hover {
 }
 
 .left {
-  flex: 0 0 50%;
+  flex: 0 0 45%;
   position: relative;
   overflow: visible;
 }
@@ -269,7 +283,7 @@ nav a:hover {
 }
 
 .right {
-  flex: 0 0 50%;
+  flex: 0 0 55%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -323,14 +337,18 @@ nav a:hover {
   position: absolute;
   font-weight: 500;
   bottom: 7rem;
-  left: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 80%; /* or a fixed width if you prefer */
   padding: 1.5rem;
-  width: 50%;
   color: white;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  text-align: center; /* Center the text inside */
   filter: drop-shadow(0.1rem 0.1rem 0.6rem rgba(9, 56, 4, 0.9));
+   bottom: 3.5rem; /* Adjust as needed */
 }
 
 .carousel-caption a,
@@ -341,7 +359,7 @@ nav a:hover {
   color: white;
   text-decoration: none;
   padding: 0;
-  filter: drop-shadow(0.1rem 0.1rem 0.6rem rgba(119, 56, 114, 0.37));
+  /*filter: drop-shadow(0.1rem 0.1rem 0.6rem rgba(119, 56, 114, 0.37));*/
 }
 
 .carousel-caption a:hover {
@@ -355,16 +373,23 @@ nav a:hover {
 .carousel-caption h2 {
   color: white;
   font-family: var(--font-heading);
-  font-size: var( --font-size-h2home);
+  font-size: var(--font-size-h2homecarousel);
   font-weight: 500;
+  text-align: center; /* Center the text */
+  margin: 0; /* Remove default margins */
 }
 
 .carousel-caption h2:hover {
-  color: white;
- 
-  font-style: italic;
-
-  font-weight: 500;
+  color: var(--color-text);
+    font-size: var(--font-size-h2homecarousel);
+  background: #ffffff;
+  border-radius: 1.3rem;
+  padding: 0.3rem; /* matches default — no layout shift */
+  text-decoration: none;
+  text-decoration-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+ filter: drop-shadow(0.1rem 0.1rem 0.6rem rgba(119, 56, 114, 0.07));
 }
 
 .carousel-caption .year {
@@ -404,8 +429,8 @@ nav a:hover {
 
 .carousel-dot {
 
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   border: none;
   background: rgba(255, 255, 255, 0.6);
@@ -507,6 +532,7 @@ background: rgba(255, 255, 255, 1);
 }
 
 .project-details a:hover {
+  color: var(--color-accent);
   padding: 0.3rem; /* matches default — no layout shift */
 }
 
@@ -571,6 +597,7 @@ background: rgba(255, 255, 255, 1);
 .tag:hover,
 .project-meta .tag:hover,
 .project-details .tag:hover {
+  color: var(--color-accent);
   background: #ffffff;
   filter: drop-shadow(0.1rem 0.1rem 0.6rem rgba(119, 56, 114, 0.37));
   padding: 0.2rem 0.6rem;
@@ -789,12 +816,13 @@ background: rgba(255, 255, 255, 1);
 
 .tag-btn:hover,
 .tag-btn.active {
+  color: var(--color-accent);
   background: white;
   border-color: white;
 }
 
 .project-grid {
-  margin-top: 12rem;
+  margin-top: 16rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0 2rem 4rem;
@@ -809,6 +837,7 @@ background: rgba(255, 255, 255, 1);
   flex-direction: column;
   gap: 0.5rem;
 
+
 }
 
 .project-card-info p {
@@ -821,8 +850,10 @@ background: rgba(255, 255, 255, 1);
   height: 180px;
   object-fit: cover;
   flex: none;
-  transition: clip-path 0.4s ease;
+  transition: clip-path 0.4s ease, filter 0.3s ease;
 }
+
+
 
 .project-card a,
 .project-card a:link,
@@ -838,6 +869,7 @@ background: rgba(255, 255, 255, 1);
   filter: none;
   padding: 0;
   display: block;
+  filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
 }
 
 .project-card-info h2 {
@@ -847,14 +879,15 @@ background: rgba(255, 255, 255, 1);
 .project-card-info h2:hover {
   /*font-family: var(--font-about);*/
  font-style: italic;
+ filter: drop-shadow(0px 0px 0px rgba(0,0,0,0));
   
 }
 
 .project-card-info a:hover {
   font-family: var(--font-about);
-
-
-
+  filter: none;
+  background: none;
+  padding: 0;
 }
 
 .year { 
@@ -868,6 +901,7 @@ background: rgba(255, 255, 255, 1);
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+
 }
 
 .tag {
@@ -876,6 +910,7 @@ background: rgba(255, 255, 255, 1);
   border-radius: 2rem;
   border: 1px solid var(--color-text);
   text-decoration: none;
+
 }
 
 /* ============================================
@@ -1348,7 +1383,49 @@ Socials links
 .writing-meta-row { display: none; }
 
 
+/* ============================================
+   HOME CLUSTER / CAROUSEL TOGGLE
+   ============================================ */
+.carousel {
+  display: none;
+}
 
+.project-cluster {
+  display: block;
+}
+
+/* Override .left img rule for basket */
+.basket-img {
+  width: auto !important;
+  height: 40vh !important;
+ bottom: -15vh;
+ left: 5vw;
+}
+
+@media (max-width: 1400px) and (min-width: 1201px) {
+  :root {
+    --font-size-h1: 2.8em;
+    --font-size-h2: 1.8em;
+    --font-size-base: 1em;
+  }
+}
+
+@media (min-width: 1800px) {
+  :root {
+    --font-size-h1: 4.2em;
+    --font-size-base: 1.2em;
+  }
+}
+
+@media (max-height: 700px) {
+  .project-meta > p {
+    display: none;
+  }
+
+  .toc {
+    display: none;
+  }
+}
 
 @media (max-width: 1200px) {
   /* Nav */
@@ -1360,6 +1437,19 @@ Socials links
     width: 100%;
     z-index: 100;
 
+  }
+
+  .project-cluster {
+    display: none;
+  }
+
+  .carousel {
+    display: block;
+    height: 50vh;
+  }
+
+  .basket-img {
+    display: none;
   }
 
     .carousel-dots {
@@ -1388,6 +1478,14 @@ Socials links
 
   .carousel-caption,
   .carousel-btn {
+    display: none;
+  }
+
+    .project-cluster {
+    display: none;
+  }
+
+  .basket-img {
     display: none;
   }
 

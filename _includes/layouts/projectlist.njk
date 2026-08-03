@@ -44,7 +44,17 @@ bodyClass: page-projects
     const btn = document.createElement('button');
     btn.className = 'tag-btn';
     btn.dataset.tag = tag;
-    btn.textContent = tag;
+    
+ const tagFormatMap = {
+      'gamingculture': 'GAMING CULTURE',
+      'uxdesign': 'UX DESIGN',
+      'designresearch': 'DESIGN RESEARCH',
+      'urbanfutures': 'URBAN FUTURES',
+      'worldbuilding': 'WORLDBUILDING',
+      'participatorydesign': 'PARTICIPATORY DESIGN',
+    };
+    btn.textContent = tagFormatMap[tag] || tag.toUpperCase();
+    
     labelsContainer.appendChild(btn);
   });
 

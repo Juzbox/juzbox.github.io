@@ -17,7 +17,7 @@ collaborator: Diba Mokhtabad
 location: Gothenburg, Sweden
 permalink: /projects/local-food/
 ---
-# In light of geopolitical instability and the impact of global warming on food production, how might Gothenburg support the strengthening of its local food ecosystems? 
+# How might Gothenburg support the strengthening of its local food ecosystems? 
 
 
 ## Overview

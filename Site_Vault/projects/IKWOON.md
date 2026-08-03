@@ -7,6 +7,7 @@ tags:
   - spotlight
   - designresearch
   - urbanfutures
+  - uxdesign
 layout: layouts/projects.njk
 introduction: How might the renovation of the Dutch housing stock be scaled through simple digital solutions?
 role: UX Designer, Product development

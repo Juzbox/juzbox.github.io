@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "88c1bd8300163b79",
+            "id": "84ffc659a0050314",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writing/Fraying2.md",
+                "file": "projects/VISION MEDIATION SIMULATOR.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Fraying2"
+              "title": "VISION MEDIATION SIMULATOR"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 396.5
   },
   "right": {
     "id": "5c35874c6c4bc424",
@@ -183,46 +183,45 @@
       "bases:Create new base": false
     }
   },
-  "active": "88c1bd8300163b79",
+  "active": "84ffc659a0050314",
   "lastOpenFiles": [
+    "projects/SOME PRECIOUS.md",
+    "writing/HOW CAN GAMING CULTURE CHALLENGE SOCIAL DESIGN AND HOME RENOVATION.md",
+    "projects/VISION MEDIATION SIMULATOR.md",
+    "Images/03_SIMULATION_ONGOING (HOVER EFFECTS).png",
+    "Images/02_SIMULATION_START.png",
+    "Images/T3_UiMockups-01.png",
+    "Images/Simulator_screen.png",
+    "Images/Simulator_screen 2.png",
+    "Images/Simulator_screen 1.png",
+    "Images/Screenshot 2026-07-09 143310.png",
+    "Images/Screenshot 2026-07-09 143024.png",
+    "Images/AI city - Frame 9 1.png",
+    "Images/04_CONCLUSION.png",
+    "projects/DOSSIERS CIBLES.md",
+    "projects/COUNTER-TWINNING IN GOTHENBURG.md",
+    "projects/IKWOON.md",
+    "projects/STRENGTHENING LOCAL FOOD SYSTEMS.md",
+    "about.md",
+    "Images/WorkshopReport_AT_V2.pdf",
+    "projects/CONVIVIAL URBAN FUTURES.md",
+    "projects/THE TURFU PLAYBOOK.md",
+    "writing/Fraying2.md",
     "writing/AESOP.md",
     "writing/Visualizing cultural values in urban planning - a preparatory framework for their integration in digital twins.md",
     "writing/COUNTER-TWINNING IN GOTHENBURG.md",
     "writing/MourningaStranger.md",
     "writing/WAM.md",
     "writing/Fraying3.md",
-    "writing/Fraying2.md",
     "writing/fraying1.md",
     "writing/A Journey Through HEL.md",
     "writing/Agorajam.md",
-    "writing/HOW CAN GAMING CULTURE CHALLENGE SOCIAL DESIGN AND HOME RENOVATION.md",
     "writing/Hype.md",
     "writing/Automation.md",
     "writing/papyrusgo.md",
-    "projects/CONVIVIAL URBAN FUTURES.md",
     "projects/WHATEVER COMES NEXT.md",
-    "Images/team003.gif",
-    "team003.gif",
-    "about.md",
-    "Images/T2_demo.gif",
     "index.md",
-    "index 1.md",
-    "projects/COUNTER-TWINNING IN GOTHENBURG.md",
-    "T2_demo.gif",
-    "projects/IKWOON.md",
-    "Images/Untitled_Artwork.jpg",
-    "Images/TwinProtos.jpg",
-    "Images/ThesisPremise02.png",
-    "Images/thesisPremise01.png",
-    "Images/SketchesUI001(2).jpg",
-    "Images/Screenshot-2025-05-06-135458.png",
-    "projects/STRENGTHENING LOCAL FOOD SYSTEMS.md",
-    "projects/LA CITÉ DE L’IMAGE ET DU VIVANT.md",
-    "projects/LIFE WITH LIMITED ENERGY.md",
-    "projects/THE TURFU PLAYBOOK.md",
-    "writing/Untitled.md",
     "writing/WAM",
-    "Images/WorkshopReport_AT_V2.pdf",
     "columns",
     "WorkshopReport_AT_V2.pdf",
     "Images"
