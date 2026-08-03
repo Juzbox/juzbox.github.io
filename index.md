@@ -4,7 +4,7 @@ layout: layouts/home.njk
 ---
 
 <h1>DESIGN RESEARCHER<br>
-& DIGITAL ARTIST</h1><br><br><br><br><br>
+& DIGITAL ARTIST</h1>
 
 Hi! I am Hugo Pilate, a design practitioner based in Gothenburg, Sweden, with experience working across the US, Europe and India.
 
