@@ -109,6 +109,8 @@ h1 {
   font-size: var(--font-size-h1);
   font-weight: 500;
   line-height: 1.1;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 h2 {
@@ -245,7 +247,7 @@ nav li::before { content: none; }
 nav a,
 nav a:link,
 nav a:visited {
-  font-weight: 100;
+  font-weight: 300;
   color: var(--color-nav-text);
   text-decoration: none;
   padding: 0.3rem;
@@ -267,12 +269,14 @@ nav a:hover {
   display: flex;
   flex: 1;
   overflow: visible;
+  min-width: 0;
 }
 
 .left {
   flex: 0 0 45%;
   position: relative;
   overflow: visible;
+  min-width: 0;
 }
 
 .left img {
@@ -291,6 +295,7 @@ nav a:hover {
   padding: 0 10%;
   gap: 1rem;
   list-style: none;
+  min-width: 0;
  font-size: var(--font-size-base);
 }
 
@@ -1712,4 +1717,17 @@ Socials links
   body.page-network { overflow: auto; }
   #network-container { height: auto; min-height: 100vh; }
 
+}
+
+/* Narrow phones (portrait) — hero heading was overflowing the viewport
+   because --font-size-h1 only scaled down for widths above 1200px. */
+@media (max-width: 600px) {
+  :root {
+    --font-size-h1: 2.1em;
+    --font-size-h2: 1.6em;
+  }
+
+  .right {
+    padding: 0 1.5rem;
+  }
 }
