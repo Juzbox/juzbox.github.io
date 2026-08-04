@@ -1,0 +1,16 @@
+<h1>Hugo Pilate</h1>
+<p>Hugo Pilate is a design researcher and digital artist based in Gothenburg, Sweden.
+He specializes in participatory design, urban digital twinning, speculative design, and digital art.</p>
+<h2>Projects</h2>
+<ul>
+<li>Counter-Twinning in Gothenburg (2025): https://hugopilate.com/projects/counter-twinning-in-gothenburg/</li>
+<li>The Turfu Playbook (2025): https://hugopilate.com/projects/turfuplaybook/</li>
+<li>Strengthening Local Food Systems (2024): https://hugopilate.com/projects/local-food/</li>
+<li>Convivial Urban Futures (2021): https://hugopilate.com/projects/convivialcity/</li>
+</ul>
+<h2>Writing</h2>
+<p>https://hugopilate.com/writing/</p>
+<h2>Teaching &amp; Exhibits</h2>
+<p>https://hugopilate.com/teaching/</p>
+<h2>Contact</h2>
+<p>hugopilate@gmail.com</p>
