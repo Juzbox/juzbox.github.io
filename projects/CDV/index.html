@@ -395,7 +395,7 @@ if (cluster) {
         shadowInner.style.cssText = `
           width: 100%;
           height: 100%;
-          background: rgba(4,51,34,0.4);
+          background: rgba(26,92,92,0.4);
           clip-path: ${generateBlob(blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension)};
         `;
 
@@ -405,20 +405,25 @@ if (cluster) {
         el._shadowInner = shadowInner;
         el._shadowOuter = shadowOuter;
 
+
+        
+
         el.addEventListener('mouseenter', () => {
           if (el._dragging) return;
           img.style.clipPath         = generateBlob(blobSeed, BLOB_HOVER.blobiness, BLOB_HOVER.tension);
           shadowInner.style.clipPath = generateBlob(blobSeed, BLOB_HOVER.blobiness, BLOB_HOVER.tension);
-          shadowInner.style.background = 'rgba(4,51,34,0.5)';
+          shadowInner.style.background = 'rgba(26,92,92,0.5)';
           shadowOuter.style.top = `${cardPositions[i].top + 10}px`;
-
+          
         });
+
         el.addEventListener('mouseleave', () => {
           if (el._dragging) return;
           img.style.clipPath         = generateBlob(blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension);
           shadowInner.style.clipPath = generateBlob(blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension);
-          shadowInner.style.background = 'rgba(4,51,34,0.28)';
+          shadowInner.style.background = 'rgba(26,92,92,0.28)';
           shadowOuter.style.top = `${cardPositions[i].top + 2}px`;
+         
         });
 
         // ── Drag ──────────────────────────────────────────────────────────
@@ -907,6 +912,20 @@ function updateConnections() {
         a.addEventListener('click', () => overlay.classList.remove('open'));
       });
     }
+
+    // ============================================
+    // COPY EMAIL
+    // ============================================
+    document.querySelectorAll('a[href="mailto:hugopilate@gmail.com"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        navigator.clipboard.writeText('hugopilate@gmail.com').then(() => {
+          const original = link.textContent;
+          link.textContent = 'Copied!';
+          setTimeout(() => { link.textContent = original; }, 2000);
+        });
+      });
+    });
 
     // ============================================
     // EXTERNAL LINKS

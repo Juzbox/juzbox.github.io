@@ -45,6 +45,7 @@
      data-tags="projects,spotlight,participatorydesign,urbanfutures,worldbuilding"
      data-url="/projects/convivialcity/">
   <img src="/assets/img/team001.gif" alt="CONVIVIAL URBAN FUTURES" class="cluster-img" />
+  <div class="cluster-overlay"></div>
   <span class="cluster-label">
     <span class="cluster-label-title">CONVIVIAL URBAN FUTURES</span>
     <span class="cluster-label-year">2021</span>
@@ -56,6 +57,7 @@
      data-tags="projects,spotlight,designresearch,urbanfutures,uxdesign"
      data-url="/projects/ikwoon/">
   <img src="/assets/img/phone_mockup_5.jpg" alt="IKWOON" class="cluster-img" />
+  <div class="cluster-overlay"></div>
   <span class="cluster-label">
     <span class="cluster-label-title">IKWOON</span>
     <span class="cluster-label-year">2022</span>
@@ -67,6 +69,7 @@
      data-tags="projects,spotlight,designresearch,gamingculture,urbanfutures"
      data-url="/projects/CDV/">
   <img src="/assets/img/CDI_Preview003.gif" alt="LA CITÉ DE L’IMAGE ET DU VIVANT" class="cluster-img" />
+  <div class="cluster-overlay"></div>
   <span class="cluster-label">
     <span class="cluster-label-title">LA CITÉ DE L’IMAGE ET DU VIVANT</span>
     <span class="cluster-label-year">2023</span>
@@ -78,6 +81,7 @@
      data-tags="projects,spotlight,designresearch,participatorydesign,urbanfutures"
      data-url="/projects/local-food/">
   <img src="/assets/img/IMG_6825.jpg" alt="STRENGTHENING LOCAL FOOD SYSTEMS" class="cluster-img" />
+  <div class="cluster-overlay"></div>
   <span class="cluster-label">
     <span class="cluster-label-title">STRENGTHENING LOCAL FOOD SYSTEMS</span>
     <span class="cluster-label-year">2024</span>
@@ -89,6 +93,7 @@
      data-tags="projects,designresearch,participatorydesign,gamingculture,urbanfutures,spotlight"
      data-url="/projects/counter-twinning-in-gothenburg/">
   <img src="/assets/img/Screenshot-2024-12-17-170301.png" alt="COUNTER-TWINNING IN GOTHENBURG" class="cluster-img" />
+  <div class="cluster-overlay"></div>
   <span class="cluster-label">
     <span class="cluster-label-title">COUNTER-TWINNING IN GOTHENBURG</span>
     <span class="cluster-label-year">2025</span>
@@ -100,6 +105,7 @@
      data-tags="projects,spotlight,participatorydesign,worldbuilding,gamingculture"
      data-url="/projects/turfuplaybook/">
   <img src="/assets/img/IMG_6480 (1).jpg" alt="THE TURFU PLAYBOOK" class="cluster-img" />
+  <div class="cluster-overlay"></div>
   <span class="cluster-label">
     <span class="cluster-label-title">THE TURFU PLAYBOOK</span>
     <span class="cluster-label-year">2025</span>
@@ -111,6 +117,7 @@
      data-tags="projects,spotlight,designresearch,uxdesign"
      data-url="/projects/algoethiques/">
   <img src="/assets/img/LogoCover.png" alt="DOSSIERS CIBLES" class="cluster-img" />
+  <div class="cluster-overlay"></div>
   <span class="cluster-label">
     <span class="cluster-label-title">DOSSIERS CIBLES</span>
     <span class="cluster-label-year">2026</span>
@@ -182,9 +189,8 @@
   <br>
   <h1>DESIGN RESEARCHER<br>
 & DIGITAL ARTIST</h1>
-<p>Hi! I am Hugo Pilate, a design practitioner based in Gothenburg, Sweden, with experience working across the US, Europe and India.</p>
-<p>I help clients <a href="/projects/?tag=participatorydesign">collaboratively design</a>, apps, websites, print material, and immersive productions.</p>
-<p>Recently, I have been especially keen to work with and for actors developing alternatives to the neoliberal forces shaping <a href="/projects/?tag=urbanfutures">life in the cities of tomorrow</a>, and their many forms of discrimination. If you are working on such projects and need some design support, please reach out!</p>
+<p>Hi, I am Hugo Pilate, a design practitioner with over ten years of experience currently based in Gothenburg, Sweden.</p>
+<p>My practice spans <a href="/projects/?tag=designresearch">design consulting</a>, <a href="/projects/?tag=gamingculture">artistic production</a>, and <a href="/teaching/">design education</a>. It is driven by a curiosity for how collaborative environments, both digital and physical, can support the emergence of alternatives to capitalism.</p>
 <p>In 2022, I co-founded an artistic duo with <a href="https://pedrogilfarias.com/" target="_blank" rel="noopener noreferrer">Pedro Gil Farias</a>, <a href="https://whatamess.city/">WHAT A MESS</a>, where we problematize the representation of urban spaces in video games.</p>
 <p></p>
 <p></p>
@@ -261,17 +267,18 @@
     z-index: 100 !important;
   }
 
-  .cluster-img {
-    display: block;
-    object-fit: cover;
-    transition: clip-path 0.4s ease;
-
-  }
+.cluster-img {
+  display: block;
+  object-fit: cover;
+  transition: clip-path 0.4s ease, filter 0.4s ease;
+}
 
 
 .cluster-item:hover .cluster-img {
   transform: scale(1.3);
 }
+
+
 
   .cluster-fake-shadow-inner {
     filter: blur(22px);
@@ -299,17 +306,15 @@
     color: white;
     letter-spacing: 0.04em;
     text-shadow: 
-      0 1px 3px rgba(0,0,0,0.5),
-      0 2px 12px rgba(0,0,0,0.4),
-      0 4px 24px rgba(0,0,0,0.2);
+  0 1px 3px rgba(26,92,92,0.5),
+      0 2px 12px rgba(26,92,92,0.4),
+      0 4px 24px rgba(26,92,92,0.2);
     z-index: 10;
   }
 
   .cluster-label-title {
+    font-size: 4rem;
 
-    font-size: var(--font-size-h2);
-    letter-spacing: 0.04em;
-  
   
   }
 
@@ -320,6 +325,13 @@
   .cluster-item:hover .cluster-label {
     opacity: 1;
   }
+
+.cluster-item:hover .cluster-img {
+  filter: blur(5px);
+
+}
+
+
 </style>
 
 
@@ -542,7 +554,7 @@ if (cluster) {
         shadowInner.style.cssText = `
           width: 100%;
           height: 100%;
-          background: rgba(4,51,34,0.4);
+          background: rgba(26,92,92,0.4);
           clip-path: ${generateBlob(blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension)};
         `;
 
@@ -552,20 +564,25 @@ if (cluster) {
         el._shadowInner = shadowInner;
         el._shadowOuter = shadowOuter;
 
+
+        
+
         el.addEventListener('mouseenter', () => {
           if (el._dragging) return;
           img.style.clipPath         = generateBlob(blobSeed, BLOB_HOVER.blobiness, BLOB_HOVER.tension);
           shadowInner.style.clipPath = generateBlob(blobSeed, BLOB_HOVER.blobiness, BLOB_HOVER.tension);
-          shadowInner.style.background = 'rgba(4,51,34,0.5)';
+          shadowInner.style.background = 'rgba(26,92,92,0.5)';
           shadowOuter.style.top = `${cardPositions[i].top + 10}px`;
-
+          
         });
+
         el.addEventListener('mouseleave', () => {
           if (el._dragging) return;
           img.style.clipPath         = generateBlob(blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension);
           shadowInner.style.clipPath = generateBlob(blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension);
-          shadowInner.style.background = 'rgba(4,51,34,0.28)';
+          shadowInner.style.background = 'rgba(26,92,92,0.28)';
           shadowOuter.style.top = `${cardPositions[i].top + 2}px`;
+         
         });
 
         // ── Drag ──────────────────────────────────────────────────────────
@@ -1054,6 +1071,20 @@ function updateConnections() {
         a.addEventListener('click', () => overlay.classList.remove('open'));
       });
     }
+
+    // ============================================
+    // COPY EMAIL
+    // ============================================
+    document.querySelectorAll('a[href="mailto:hugopilate@gmail.com"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        navigator.clipboard.writeText('hugopilate@gmail.com').then(() => {
+          const original = link.textContent;
+          link.textContent = 'Copied!';
+          setTimeout(() => { link.textContent = original; }, 2000);
+        });
+      });
+    });
 
     // ============================================
     // EXTERNAL LINKS
