@@ -6,7 +6,7 @@ layout: layouts/home.njk
 <h1>DESIGN RESEARCHER<br>
 & DIGITAL ARTIST</h1>
 
-Hi, I am Hugo Pilate, a design practitioner with over ten years of experience currently based in Gothenburg, Sweden.
+Hi, I am Hugo Pilate, a design practitioner with over ten years of experience, currently based in Gothenburg, Sweden.
 
 My practice spans [design consulting](/projects/?tag=designresearch), [artistic production](/projects/?tag=gamingculture), and [design education](/teaching/). It is driven by a curiosity for how collaborative environments, both digital and physical, can support the emergence of alternatives to capitalism.
 
