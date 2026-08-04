@@ -6,11 +6,9 @@ layout: layouts/home.njk
 <h1>DESIGN RESEARCHER<br>
 & DIGITAL ARTIST</h1>
 
-Hi! I am Hugo Pilate, a design practitioner based in Gothenburg, Sweden, with experience working across the US, Europe and India.
+Hi, I am Hugo Pilate, a design practitioner with over ten years of experience currently based in Gothenburg, Sweden.
 
-I help clients [collaboratively design](/projects/?tag=participatorydesign), apps, websites, print material, and immersive productions. 
-
-Recently, I have been especially keen to work with and for actors developing alternatives to the neoliberal forces shaping [life in the cities of tomorrow](/projects/?tag=urbanfutures), and their many forms of discrimination. If you are working on such projects and need some design support, please reach out!
+My practice spans [design consulting](/projects/?tag=designresearch), [artistic production](/projects/?tag=gamingculture), and [design education](/teaching/). It is driven by a curiosity for how collaborative environments, both digital and physical, can support the emergence of alternatives to capitalism.
 
 
 In 2022, I co-founded an artistic duo with Pedro Gil Farias, [WHAT A MESS](https://whatamess.city/), where we problematize the representation of urban spaces in video games. 

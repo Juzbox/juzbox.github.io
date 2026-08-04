@@ -26,18 +26,31 @@ layout: layouts/base.njk
 </div>
 
 <script>
-if (window.innerWidth <= 1200) {
+function initTeachingCols() {
+  const isMobile = window.matchMedia('(max-width: 1200px)').matches;
   document.querySelectorAll('.col-toggle').forEach(btn => {
-    const content = btn.nextElementSibling;
+    const newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+
+    const content = newBtn.nextElementSibling;
     const heading = content.querySelector('h1, h2, h3');
+
     if (heading) {
-      btn.textContent = heading.textContent;
-      heading.style.display = 'none';
+      newBtn.textContent = heading.textContent;
+      heading.style.display = isMobile ? 'none' : ''; // ← restore on desktop
     }
-    content.classList.add('collapsed');
-    btn.addEventListener('click', () => {
-      content.classList.toggle('collapsed');
-    });
+
+    if (isMobile) {
+      content.classList.add('collapsed');
+      newBtn.addEventListener('click', () => {
+        content.classList.toggle('collapsed');
+      });
+    } else {
+      content.classList.remove('collapsed');
+    }
   });
 }
+
+  initTeachingCols();
+  window.addEventListener('resize', initTeachingCols);
 </script>
