@@ -239,17 +239,19 @@ nav a:visited {
   color: var(--color-nav-text);
   text-decoration: none;
   padding: 0.3rem;
+  white-space: nowrap;
 }
 
-nav a:hover {
+a:hover {
   color: var(--color-accent);
   background: #ffffff;
-  border-radius: 2rem;
+  border-radius: 1rem;
   padding: 0.3rem;
   text-decoration: none;
-  /* Safari fix: -webkit-filter alongside filter */
-  -webkit-filter: drop-shadow(0.1rem 0.1rem 0.6rem rgba(119, 56, 114, 0.37));
-  filter: drop-shadow(0.1rem 0.1rem 0.6rem rgba(119, 56, 114, 0.37));
+  text-decoration-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  box-shadow: 0.05rem 0.05rem 0.3rem rgba(119, 56, 114, 0.37);
 }
 
 /* ============================================
@@ -373,17 +375,14 @@ nav a:hover {
 }
 
 .carousel-caption h2:hover {
-  color: var(--color-text);
-  font-size: var(--font-size-h2homecarousel);
-  background: #ffffff;
-  border-radius: 1.3rem;
-  padding: 0.3rem;
+  color: var(--color-accent);
+  font-style: italic;
+  background: none;
+  filter: none;
+  -webkit-filter: none;
+  padding: 0;
+  border-radius: 0;
   text-decoration: none;
-  text-decoration-color: transparent;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  -webkit-filter: drop-shadow(0.1rem 0.1rem 0.6rem rgba(119, 56, 114, 0.07));
-  filter: drop-shadow(0.1rem 0.1rem 0.6rem rgba(119, 56, 114, 0.07));
 }
 
 .carousel-caption .year {
@@ -403,6 +402,7 @@ nav a:hover {
 .carousel-slide:hover {
   background: none;
   filter: none;
+  -webkit-filter: none;
   border-radius: 0;
   text-decoration: none;
   padding: 0;
@@ -850,7 +850,13 @@ nav a:hover {
   height: 180px;
   object-fit: cover;
   flex: none;
-  transition: clip-path 0.4s ease, filter 0.3s ease;
+  transition: clip-path 0.4s ease, filter 0.3s ease, -webkit-filter 0.3s ease;
+}
+
+.project-card-img,
+.project-card a:hover img {
+  -webkit-filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+  filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
 }
 
 .project-card a,
@@ -863,11 +869,13 @@ nav a:hover {
 
 .project-card a:hover {
   background: none;
-  -webkit-filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
-  filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+  box-shadow: none;
+
   padding: 0;
-  display: block;
+  border-radius: 0;
 }
+
+
 
 .project-card-info h2 {
   font-size: var(--font-size-sm);
@@ -1090,6 +1098,14 @@ svg#connections {
   transform-origin: center center;
   cursor: default;
   pointer-events: auto;
+}
+
+.floating-img {
+  position: fixed;
+  width: 360px;
+  height: auto;
+  z-index: 1;
+  cursor: grab;
 }
 
 /* ============================================
