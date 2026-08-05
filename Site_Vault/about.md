@@ -11,7 +11,7 @@ bodyClass: page-about
 
 
 
-Hugo Pilate is a design researcher and digital artist based in Gothenburg, Sweden, with 10+ years of experience at the intersection of participatory design, urban transformation, and digital cultures.
+Hugo Pilate is a design researcher and digital artist based in Gothenburg, Sweden, with 10+ years of experience working across the fields of social design, urban transformation, and digital cultures.
 
 
 
@@ -19,7 +19,7 @@ Trained at [Art Center College of Design](https://www.artcenter.edu/) (BS, 2014)
 
 
 
-His practice spans the development of virtual spaces, civic engagement tools, peer-learning formats, and interactive prototypes. Alongside his design practice, Hugo is one half of [What A Mess](https://whatamess.city/), an artist duo co-founded with Pedro Gil Faries. 
+His practice spans the development of virtual spaces, civic engagement tools, peer-learning formats, and interactive prototypes. Alongside his design practice, Hugo is one half of [What A Mess](https://whatamess.city/), an artist duo co-founded with Pedro Gil Farias. 
 
 
 Hugo has exhibited at the London Design Biennale, the Architecture Film Festival Rotterdam, Milan Machinia Film Festival, Delhi Irregulars Art Fair, and Kindl in Berlin.

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/VISION MEDIATION SIMULATOR.md",
+                "file": "about.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "VISION MEDIATION SIMULATOR"
+              "title": "about"
             }
           }
         ]
@@ -187,9 +187,9 @@
   },
   "active": "84ffc659a0050314",
   "lastOpenFiles": [
+    "projects/VISION MEDIATION SIMULATOR.md",
     "projects/SOME PRECIOUS.md",
     "writing/HOW CAN GAMING CULTURE CHALLENGE SOCIAL DESIGN AND HOME RENOVATION.md",
-    "projects/VISION MEDIATION SIMULATOR.md",
     "Images/03_SIMULATION_ONGOING (HOVER EFFECTS).png",
     "Images/02_SIMULATION_START.png",
     "Images/T3_UiMockups-01.png",
