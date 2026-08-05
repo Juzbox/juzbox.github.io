@@ -239,31 +239,29 @@
       );
     }
 
+// ============================================
+    // SAFARI DETECTION — swap cluster for carousel
+    // ============================================
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    if (isSafari) {
+      const clusterEl = document.getElementById('project-cluster');
+      const carouselEl = document.querySelector('.carousel');
+      if (clusterEl) clusterEl.style.display = 'none';
+      if (carouselEl) carouselEl.style.display = 'block';
+    }
+
     // ============================================
     // PROJECT CLUSTER
     // ============================================
-    const cluster = document.getElementById('project-cluster');
+  const cluster = document.getElementById('project-cluster');
 
-if (cluster) {
-      const supportsShape = CSS.supports('clip-path', 'shape(from 0% 0%)');
-
+    if (cluster && !isSafari) {
       const BASE_W      = 250;
       const BASE_H      = 200;
       const SIZE_VAR    = 0.15;
       const MAX_TILT    = 60;
       const TILT_RADIUS = 1000;
       const skipTags    = ['projects', 'work', 'selected', 'spotlight'];
-
-      // Fallback border-radius shapes for Safari < 18
-      const FALLBACK_RADII = [
-        '60% 40% 55% 45% / 45% 55% 40% 60%',
-        '40% 60% 45% 55% / 55% 45% 60% 40%',
-        '55% 45% 40% 60% / 40% 60% 55% 45%',
-        '45% 55% 60% 40% / 60% 40% 45% 55%',
-        '60% 40% 50% 50% / 50% 50% 40% 60%',
-        '50% 50% 45% 55% / 55% 45% 50% 50%',
-        '40% 60% 55% 45% / 45% 55% 60% 40%',
-      ];
 
       function makeRand(seed) {
         let s = seed;
@@ -300,26 +298,6 @@ if (cluster) {
           path += `,curve to ${next.x.toFixed(2)}% ${next.y.toFixed(2)}% with ${c1x.toFixed(2)}% ${c1y.toFixed(2)}% / ${c2x.toFixed(2)}% ${c2y.toFixed(2)}%`;
         }
         return `shape(${path})`;
-      }
-
-      function applyBlobShape(img, blobSeed, blobiness, tension, idx) {
-        if (supportsShape) {
-          img.style.clipPath = generateBlob(blobSeed, blobiness, tension);
-          img.style.borderRadius = '';
-        } else {
-          img.style.clipPath = '';
-          img.style.borderRadius = FALLBACK_RADII[idx % FALLBACK_RADII.length];
-        }
-      }
-
-      function applyShadowShape(shadowInner, blobSeed, blobiness, tension, idx) {
-        if (supportsShape) {
-          shadowInner.style.clipPath = generateBlob(blobSeed, blobiness, tension);
-          shadowInner.style.borderRadius = '';
-        } else {
-          shadowInner.style.clipPath = '';
-          shadowInner.style.borderRadius = FALLBACK_RADII[idx % FALLBACK_RADII.length];
-        }
       }
 
       const BLOB_STATIC = { blobiness: 6, tension: 0.15 };
@@ -396,10 +374,8 @@ if (cluster) {
         img.style.height   = `${h}px`;
 
         const blobSeed = originalIdx * 12345 + 9999;
-
-        applyBlobShape(img, blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension, i);
-        if (supportsShape) img.style.transition = 'clip-path 0.4s ease';
-        else img.style.transition = 'border-radius 0.4s ease, transform 0.3s ease';
+        img.style.clipPath   = generateBlob(blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension);
+        img.style.transition = 'clip-path 0.4s ease';
 
         const shadowOuter = document.createElement('div');
         shadowOuter.style.cssText = `
@@ -426,8 +402,8 @@ if (cluster) {
           width: 100%;
           height: 100%;
           background: rgba(26,92,92,0.4);
+          clip-path: ${generateBlob(blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension)};
         `;
-        applyShadowShape(shadowInner, blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension, i);
 
         shadowBlur.appendChild(shadowInner);
         shadowOuter.appendChild(shadowBlur);
@@ -435,20 +411,25 @@ if (cluster) {
         el._shadowInner = shadowInner;
         el._shadowOuter = shadowOuter;
 
+
+        
+
         el.addEventListener('mouseenter', () => {
           if (el._dragging) return;
-          applyBlobShape(img, blobSeed, BLOB_HOVER.blobiness, BLOB_HOVER.tension, i);
-          applyShadowShape(shadowInner, blobSeed, BLOB_HOVER.blobiness, BLOB_HOVER.tension, i);
+          img.style.clipPath         = generateBlob(blobSeed, BLOB_HOVER.blobiness, BLOB_HOVER.tension);
+          shadowInner.style.clipPath = generateBlob(blobSeed, BLOB_HOVER.blobiness, BLOB_HOVER.tension);
           shadowInner.style.background = 'rgba(26,92,92,0.5)';
           shadowOuter.style.top = `${cardPositions[i].top + 10}px`;
+          
         });
 
         el.addEventListener('mouseleave', () => {
           if (el._dragging) return;
-          applyBlobShape(img, blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension, i);
-          applyShadowShape(shadowInner, blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension, i);
+          img.style.clipPath         = generateBlob(blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension);
+          shadowInner.style.clipPath = generateBlob(blobSeed, BLOB_STATIC.blobiness, BLOB_STATIC.tension);
           shadowInner.style.background = 'rgba(26,92,92,0.28)';
           shadowOuter.style.top = `${cardPositions[i].top + 2}px`;
+         
         });
 
         // ── Drag ──────────────────────────────────────────────────────────
@@ -499,6 +480,9 @@ if (cluster) {
 
       // ── SVG connection lines ──────────────────────────────────────────────
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+
+      
+
       svg.style.cssText = `
         position: absolute;
         inset: 0;
@@ -536,6 +520,8 @@ if (cluster) {
           return path;
         });
 
+
+
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
         circle.setAttribute('r', '8');
         circle.setAttribute('fill', 'rgba(26,92,92,0.5)');
@@ -550,7 +536,7 @@ if (cluster) {
         text.setAttribute('font-family', 'var(--font-body)');
         text.setAttribute('text-anchor', 'middle');
         text.setAttribute('dominant-baseline', 'auto');
-
+        
         const tagFormatMap = {
           'gamingculture': 'GAMING CULTURE',
           'uxdesign': 'UX DESIGN',
@@ -560,11 +546,12 @@ if (cluster) {
           'participatorydesign': 'PARTICIPATORY DESIGN',
         };
         text.textContent = tagFormatMap[tag] || tag.toUpperCase();
+        
         text.style.cursor = 'pointer';
         text.style.pointerEvents = 'all';
         svg.appendChild(text);
 
-        const pill = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+ const pill = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
         pill.setAttribute('fill', 'white');
         pill.setAttribute('filter', 'drop-shadow(1px 1px 4px rgba(119,56,114,0.37))');
         pill.setAttribute('rx', '12');
@@ -582,22 +569,22 @@ if (cluster) {
           text.setAttribute('fill', 'rgba(79,6,103,0.9)');
         });
         circle.addEventListener('mouseleave', () => {
-          circle.setAttribute('fill', 'rgba(26,92,92,0.5)');
-          text.setAttribute('fill', 'rgba(26,92,92,0.8)');
+          circle.setAttribute('fill', 'rgba(48,13,37,0.75)');
+          text.setAttribute('fill', 'rgba(48,13,37,0.7)');
         });
         text.addEventListener('mouseenter', () => {
           circle.setAttribute('fill', 'rgba(79,6,103,0.8)');
           text.setAttribute('fill', 'rgba(79,6,103,0.9)');
         });
         text.addEventListener('mouseleave', () => {
-          circle.setAttribute('fill', 'rgba(26,92,92,0.5)');
-          text.setAttribute('fill', 'rgba(26,92,92,0.8)');
+          circle.setAttribute('fill', 'rgba(48,13,37,0.75)');
+          text.setAttribute('fill', 'rgba(48,13,37,0.7)');
         });
 
         return { tag, items, paths, circle, text, pill, manualX: null, manualY: null, wiggleAmount: 0.5 };
       });
 
-      // ── Highlight connected lines on blob hover ───────────────────────────
+// ── Highlight connected lines on blob hover ───────────────────────────
       const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--color-accent').trim() || '#1a5c5c';
       const defaultStroke = 'rgba(26,92,92,0.35)';
       const defaultCircle = 'rgba(26,92,92,0.5)';
@@ -613,7 +600,7 @@ if (cluster) {
             if (pathIdx !== -1) {
               node.paths[pathIdx].setAttribute('stroke', accentColor);
               node.paths[pathIdx].setAttribute('stroke-width', '1.5');
-              node.paths[pathIdx].removeAttribute('stroke-dasharray');
+              node.paths[pathIdx].setAttribute('stroke-dasharray', 'none');
             }
             node.circle.setAttribute('fill', accentColor);
             node.circle.setAttribute('r', '10');
@@ -648,16 +635,13 @@ if (cluster) {
           node.paths.forEach(p => {
             p.setAttribute('stroke', accentColor);
             p.setAttribute('stroke-width', '1.5');
-            p.removeAttribute('stroke-dasharray');
+            p.setAttribute('stroke-dasharray', 'none');
           });
           node.circle.setAttribute('fill', accentColor);
           node.circle.setAttribute('r', '10');
           node.text.setAttribute('fill', accentColor);
           node.text.setAttribute('font-weight', '500');
           node.pill.setAttribute('opacity', '1');
-          svg.appendChild(node.pill);
-          svg.appendChild(node.circle);
-          svg.appendChild(node.text);
         }
 
         function onTagLeave() {
@@ -671,13 +655,19 @@ if (cluster) {
           node.circle.setAttribute('r', '8');
           node.text.setAttribute('fill', defaultText);
           node.text.removeAttribute('font-weight');
-          node.pill.setAttribute('opacity', '0');
+           node.pill.setAttribute('opacity', '0');
+
+
         }
 
         node.circle.addEventListener('mouseenter', onTagEnter);
         node.circle.addEventListener('mouseleave', onTagLeave);
         node.text.addEventListener('mouseenter',   onTagEnter);
         node.text.addEventListener('mouseleave',   onTagLeave);
+
+                        svg.appendChild(node.pill);
+          svg.appendChild(node.circle);
+          svg.appendChild(node.text);
       });
 
       function animateWiggle(node, targetWiggle) {
@@ -696,9 +686,10 @@ if (cluster) {
         step();
       }
 
-      function updateConnections() {
+function updateConnections() {
         const clusterRect = cluster.getBoundingClientRect();
 
+        // First pass — compute unconstrained positions for all tag nodes
         const nodePositions = tagNodes.map((node) => {
           const { items } = node;
           const centers = items.map(el => {
@@ -709,6 +700,7 @@ if (cluster) {
             };
           });
 
+          // If manually dragged, use that position
           if (node.manualX !== null) {
             return { nx: node.manualX, ny: node.manualY, centers };
           }
@@ -716,6 +708,7 @@ if (cluster) {
           let nx = centers.reduce((s, c) => s + c.x, 0) / centers.length;
           let ny = centers.reduce((s, c) => s + c.y, 0) / centers.length;
 
+          // Repel from blobs
           const MIN_DIST = 80;
           for (let iter = 0; iter < 60; iter++) {
             let fx = 0, fy = 0;
@@ -736,6 +729,7 @@ if (cluster) {
             ny += fy * 0.3;
           }
 
+          // Pull toward cluster center
           nx += (clusterCX - nx) * 0.8;
           ny += (clusterCY - ny) * 0.8;
 
@@ -782,6 +776,7 @@ if (cluster) {
           text.setAttribute('x', nx);
           text.setAttribute('y', ny - 20);
 
+// Size pill to text
           const bbox = text.getBBox();
           const pad = 6;
           node.pill.setAttribute('x', bbox.x - pad);
