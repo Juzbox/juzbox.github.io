@@ -17,9 +17,6 @@ collaborator: Eve Wolf
 location: Eindhoven, Netherlands
 permalink: /projects/ikwoon/
 ---
-# How might the renovation of the Dutch housing stock be scaled through simple digital solutions? 
-
-
 ## Overview
 
 Today approximately 160 homes are being renovated in the Netherlands each day.<br><br>Bouwhulp Groep estimates that to keep up with the rise of new housing stock, and meaningfully reduce its carbon footprint this rate should be brought up to 1000 homes a day by 2050. However this requires the maturing of a burgeoning and often overlooked ecosystem which requires coordinated efforts between municipalities, their residents, contractors, and training facilities.

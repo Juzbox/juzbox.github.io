@@ -17,9 +17,6 @@ collaborator: Fabien Siouffi
 location: Arles, France
 permalink: /projects/CDV/
 ---
-# How must image-making education be reimagined in light of recently emerging digital possibilities? 
-
-
 ## Overview
 
 | **BRIEF**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | **APPROACH**                                                                                                                                                                                                                                                                                                                                                                                            |

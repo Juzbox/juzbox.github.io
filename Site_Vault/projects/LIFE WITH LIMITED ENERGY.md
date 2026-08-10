@@ -14,9 +14,6 @@ collaborator:
 location: Delhi, India
 permalink: /projects/s10/
 ---
-# How might access to solar-powered products improve the lives of households living on the edge of the electrical grid?
-
-
 ## Overview
 
 | **BRIEF**                                                                                                                                           | **APPROACH**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |

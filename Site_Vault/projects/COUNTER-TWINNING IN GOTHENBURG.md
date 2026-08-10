@@ -2,7 +2,7 @@
 title: COUNTER-TWINNING IN GOTHENBURG
 description: Interactive prototypes used to document and investigate the city's push back against the Gazaplatsen encampment.
 date: "2025"
-headerimage: /assets/img/Screenshot-2024-12-17-170301.png
+headerimage: /assets/img/T1_demo.gif
 tags:
   - designresearch
   - participatorydesign
@@ -18,9 +18,6 @@ collaborator: Mourdjen Bari
 location: Gothenburg, Sweden
 permalink: /projects/counter-twinning-in-gothenburg/
 ---
-# An investigation of Gothenburg’s urban digital twinning ecosystem and its actors’ ability to provide opportunities for meaningful civic engagement.  
-
-
 ## Overview
 
 | **BRIEF**                                                                                                                                                                                                                                                                                                                                                                       | **APPROACH**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |

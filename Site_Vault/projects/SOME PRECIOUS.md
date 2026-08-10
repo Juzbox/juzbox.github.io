@@ -15,10 +15,6 @@ collaborator:
 location: Delhi, India
 permalink: false
 ---
-# Some Precious 
-
-
-
 ## Overview
 
 

@@ -17,11 +17,6 @@ collaborator: Oshin Siao Bhatt
 location: Gothenburg, Sweden
 permalink: /projects/whatevercomesnext/
 ---
-# How can imagining the future of a single contested site like Smedjegatan 5, help reflect on the tensions shaping the city of Gothenburg?
-
-
-
-
 ## Overview
 
 |                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |

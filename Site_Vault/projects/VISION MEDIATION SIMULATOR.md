@@ -15,10 +15,6 @@ collaborator: Mourdjen Bari
 location: Europe
 permalink: false
 ---
-# How might conflicting visions of worlds, projects, and designs, be put in conversation?
-
-
-
 ## Overview
 
 | **BRIEF**                                                                                                                                                                                                                                                                                                       | **APPROACH**                                                                                                                                                                                                                                                                                        |

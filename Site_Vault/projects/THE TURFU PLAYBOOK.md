@@ -1,6 +1,6 @@
 ---
 title: THE TURFU PLAYBOOK
-description: A playbook for culturally diverse worldbuilding.
+description: A playbook for embracing diversity in worldbuilding.
 date: "2025"
 headerimage: /assets/img/IMG_6480 (1).jpg
 tags:
@@ -17,9 +17,6 @@ collaborator: Makan Fofana
 location: Europe
 permalink: /projects/turfuplaybook/
 ---
-# How might the imagination of desirable futures rooted in overlooked territories and their communities be encouraged?  
-
-
 ## Overview
 
 | **BRIEF**                                                                                                                                                                                                                                                                                                                                                                                                                                             | **APPROACH**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |

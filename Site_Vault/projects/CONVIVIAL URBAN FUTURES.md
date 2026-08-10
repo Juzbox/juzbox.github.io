@@ -17,11 +17,6 @@ collaborator:
 location: Eindhoven, Netherlands
 permalink: /projects/convivialcity/
 ---
-# How might conviviality help the imagine new social dynamics and hopeful futures in Eindhoven?
-
-
-
-
 ## Overview
 
 |                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |

@@ -17,9 +17,6 @@ collaborator: Diba Mokhtabad
 location: Gothenburg, Sweden
 permalink: /projects/local-food/
 ---
-# How might Gothenburg support the strengthening of its local food ecosystems? 
-
-
 ## Overview
 
 | **BRIEF**                                                                                                                                                                                                      | **APPROACH**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |

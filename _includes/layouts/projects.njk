@@ -2,19 +2,29 @@
 layout: layouts/base.njk
 bodyClass: page-project
 ---
+<div class="mobile-project-hero">
+  <img src="{{ headerimage }}" alt="{{ title }}" class="mobile-project-hero-img" />
+</div>
 <div class="project">
   <aside class="project-meta">
     <h1>{{ title }}</h1>
+    <p>{{ introduction }}</p>
+    <div class="meta-divider"></div>
     <p>{{ description }}</p>
+    <div class="meta-divider"></div>
+        <div class="project-tags">
+      {% for tag in tags %}
+        {% if tag != "projects" and tag != "work" and tag != "selected" and tag != "spotlight" %}
+          <a href="/projects/?tag={{ tag }}" class="tag">{{ tag | formatTag }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+   <div class="meta-divider"></div>
+   <div class="meta-divider"></div>
     <ul id="toc-list"></ul>
 
-  </aside>
-
-  <div class="project-content">
-    {{ content | safe }}
-  </div>
-
-  <div class="project-details">
+<div class="meta-divider"></div>
+  
     <p><strong>Role:</strong> {{ role }}</p>
     <p><strong>Client:</strong> {{ orgs }}</p>
 <p><strong>Collaborators:</strong> {{ collaborator }}</p>
@@ -22,15 +32,18 @@ bodyClass: page-project
 
     </br>
     {% if tags %}
-    <div class="project-tags">
-      {% for tag in tags %}
-        {% if tag != "projects" and tag != "work" and tag != "selected" and tag != "spotlight" %}
-          <a href="/projects/?tag={{ tag }}" class="tag">{{ tag | formatTag }}</a>
-        {% endif %}
-      {% endfor %}
-    </div>
+
     {% endif %}
-    <a href="/projects/" class="back-link">🡨 Back</a>
+    <div class="meta-divider"></div>
+    <div>🡨<a href="/projects/" class="back-link">Back</a></div>
+  
+
+  </aside>
+
+  <div class="project-content">
+    {{ content | safe }}
   </div>
+
+
 </div>
 
