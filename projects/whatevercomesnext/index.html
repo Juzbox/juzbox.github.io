@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WHATEVER COMES NEXT — Hugo Pilate | Design Research & Digital Art</title>
+  <title>WHATEVER COMES NEXT Hugo Pilate</title>
   <meta name="description" content="A live performance mixing live generated visuals and site-based references." />
   <meta property="og:title" content="WHATEVER COMES NEXT" />
   <meta property="og:description" content="A live performance mixing live generated visuals and site-based references." />
@@ -33,7 +33,9 @@
 
   <nav>
     <ul id="desktop-nav">
-      <li><a href="/">Hugo Pilate</a></li>
+      
+<li><a href="/">Hugo Pilate</a></li>
+
       <li><a href="/projects/">Projects</a></li>
       <li><a href="/writing/">Writing</a></li>
       <li><a href="/teaching/">Teaching & Exhibits</a></li>
@@ -58,17 +60,60 @@
   </div>
 
   <div class="content-wrapper">
-    <div class="project">
+    <div class="mobile-project-hero">
+  <img src="/assets/img/_DSC0973.jpg" alt="WHATEVER COMES NEXT" class="mobile-project-hero-img" />
+</div>
+<div class="project">
   <aside class="project-meta">
     <h1>WHATEVER COMES NEXT</h1>
+    <p>How can imagining the future of a single contested site like Smedjegatan 5, help reflect on the tensions shaping the city of Gothenburg?</p>
+    <div class="meta-divider"></div>
     <p>A live performance mixing live generated visuals and site-based references.</p>
+    <div class="meta-divider"></div>
+        <div class="project-tags">
+      
+        
+      
+        
+          <a href="/projects/?tag=designresearch" class="tag">DESIGN RESEARCH</a>
+        
+      
+        
+          <a href="/projects/?tag=gamingculture" class="tag">GAMING CULTURE</a>
+        
+      
+        
+          <a href="/projects/?tag=urbanfutures" class="tag">URBAN FUTURES</a>
+        
+      
+        
+          <a href="/projects/?tag=worldbuilding" class="tag">WORLDBUILDING</a>
+        
+      
+    </div>
+   <div class="meta-divider"></div>
+   <div class="meta-divider"></div>
     <ul id="toc-list"></ul>
+
+<div class="meta-divider"></div>
+  
+    <p><strong>Role:</strong> Design Researcher</p>
+    <p><strong>Client:</strong> Self-initiated</p>
+<p><strong>Collaborators:</strong> <a href="https://oshinsiaobhatt.com/" target="_blank" rel="noopener noreferrer">Oshin Siao Bhatt</a></p>
+<p><strong>Location :</strong> Gothenburg, Sweden</p>
+
+    </br>
+    
+
+    
+    <div class="meta-divider"></div>
+    <div>🡨<a href="/projects/" class="back-link">Back</a></div>
+  
 
   </aside>
 
   <div class="project-content">
-    <h1>How can imagining the future of a single contested site like Smedjegatan 5, help reflect on the tensions shaping the city of Gothenburg?</h1>
-<h2>Overview</h2>
+    <h2>Overview</h2>
 <table>
 <thead>
 <tr>
@@ -107,38 +152,7 @@
 <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/944525603?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Whatever Comes Next"></iframe></div>
   </div>
 
-  <div class="project-details">
-    <p><strong>Role:</strong> Design Researcher</p>
-    <p><strong>Client:</strong> Self-initiated</p>
-<p><strong>Collaborators:</strong> <a href="https://oshinsiaobhatt.com/" target="_blank" rel="noopener noreferrer">Oshin Siao Bhatt</a></p>
-<p><strong>Location :</strong> Gothenburg, Sweden</p>
 
-    </br>
-    
-    <div class="project-tags">
-      
-        
-      
-        
-          <a href="/projects/?tag=designresearch" class="tag">DESIGN RESEARCH</a>
-        
-      
-        
-          <a href="/projects/?tag=gamingculture" class="tag">GAMING CULTURE</a>
-        
-      
-        
-          <a href="/projects/?tag=urbanfutures" class="tag">URBAN FUTURES</a>
-        
-      
-        
-          <a href="/projects/?tag=worldbuilding" class="tag">WORLDBUILDING</a>
-        
-      
-    </div>
-    
-    <a href="/projects/" class="back-link">🡨 Back</a>
-  </div>
 </div>
 
 
@@ -149,6 +163,30 @@
   </div>
 
   <script>
+  // ============================================
+    // RANDOM EMOJI NAV + FAVICON
+    // ============================================
+    const emojis = ['🪨', '🪱', '🌿', '🦑', '🗺️', '☕','🪸','🧺', '🐘', '🎮', '🔮', '🚃'];
+    const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+    // Set nav item
+    const emojiNav = document.getElementById('emoji-nav');
+    if (emojiNav) emojiNav.textContent = emoji;
+
+    // Set favicon
+    const canvas = document.createElement('canvas');
+    canvas.width = 32;
+    canvas.height = 32;
+    const ctx = canvas.getContext('2d');
+    ctx.font = '28px serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(emoji, 16, 16);
+    const link = document.querySelector("link[rel='icon']") || document.createElement('link');
+    link.rel = 'icon';
+    link.href = canvas.toDataURL('image/png');
+    document.head.appendChild(link);
+
     // ============================================
     // SWIPE GESTURES
     // ============================================
@@ -224,6 +262,50 @@
     // PROJECT CLUSTER
     // ============================================
   const cluster = document.getElementById('project-cluster');
+
+  const supportsShape = CSS.supports('clip-path', 'shape(from 0% 0%)');
+
+    const FALLBACK_RADII = [
+      '60% 40% 55% 45% / 45% 55% 40% 60%',
+      '40% 60% 45% 55% / 55% 45% 60% 40%',
+      '55% 45% 40% 60% / 40% 60% 55% 45%',
+      '45% 55% 60% 40% / 60% 40% 45% 55%',
+      '60% 40% 50% 50% / 50% 50% 40% 60%',
+      '50% 50% 45% 55% / 55% 45% 50% 50%',
+      '40% 60% 55% 45% / 45% 55% 60% 40%',
+    ];
+
+    function generateBlob(seed, blobiness, tension) {
+      let s = seed;
+      function rand(min, max) {
+        s = (s * 16807 + 0) % 2147483647;
+        return min + (s / 2147483647) * (max - min);
+      }
+      const cx = 50, cy = 50, baseR = 42, numPoints = 10;
+      const points = [];
+      for (let i = 0; i < numPoints; i++) {
+        const angle = (i / numPoints) * Math.PI * 2;
+        const r = baseR + rand(-blobiness, blobiness);
+        points.push({ x: cx + Math.cos(angle) * r, y: cy + Math.sin(angle) * r });
+      }
+      const n = points.length;
+      let path = `from ${points[0].x.toFixed(2)}% ${points[0].y.toFixed(2)}%`;
+      for (let i = 0; i < n; i++) {
+        const curr = points[i];
+        const next = points[(i + 1) % n];
+        const prev = points[(i - 1 + n) % n];
+        const after = points[(i + 2) % n];
+        const c1x = curr.x + (next.x - prev.x) * tension;
+        const c1y = curr.y + (next.y - prev.y) * tension;
+        const c2x = next.x - (after.x - curr.x) * tension;
+        const c2y = next.y - (after.y - curr.y) * tension;
+        path += `,curve to ${next.x.toFixed(2)}% ${next.y.toFixed(2)}% with ${c1x.toFixed(2)}% ${c1y.toFixed(2)}% / ${c2x.toFixed(2)}% ${c2y.toFixed(2)}%`;
+      }
+      return `shape(${path})`;
+    }
+
+    const BLOB_STATIC = { blobiness: 6, tension: 0.15 };
+    const BLOB_HOVER  = { blobiness: 8, tension: 0.30 };
 
     if (cluster && !isSafari) {
       const BASE_W      = 250;

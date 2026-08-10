@@ -9,12 +9,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Cinetype Mono';
-  src: url('/assets/fonts/GT-Cinetype-Mono-Trial.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-}
 
 @font-face {
   font-family: 'Cinetype';
@@ -100,7 +94,7 @@ h1 {
   font-family: var(--font-heading);
   font-size: var(--font-size-h1);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1;
   overflow-wrap: break-word;
   word-break: break-word;
   margin-bottom: 3rem;
@@ -109,13 +103,42 @@ h1 {
 h2 {
   font-family: var(--font-heading);
   font-size: var(--font-size-h2);
-  font-weight: 500;
+  font-weight: 800;
   line-height: 1.1;
+
 }
+
+.title-link,
+.title-link:link,
+.title-link:visited {
+  background: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.title-link:hover {
+    color: var(--color-accent);
+    font-style: italic;
+
+
+}
+
+
+
+
+
+
 
 strong {
   font-weight: 300;
-  line-height: 1;
+  line-height: 1.6rem;
   font-size: var(--font-size-h3);
 }
 
@@ -184,7 +207,7 @@ li {
 }
 
 li::before {
-  content: "▸";
+  content: "—";
   padding-right: 5px;
 }
 
@@ -254,6 +277,25 @@ a:hover {
   box-shadow: 0.05rem 0.05rem 0.3rem rgba(119, 56, 114, 0.37);
 }
 
+/* Elements that should NOT get the hover pill/shadow */
+.project-card a:hover,
+.project-card-info a:hover,
+.toc a:hover,
+.back-link:hover,
+nav a:hover,
+.mobile-nav-logo:hover,
+.carousel-slide:hover,
+.carousel-caption a:hover,
+.tag:hover,
+.tag-btn:hover,
+.social-icon:hover,
+.title-link:hover,
+.writing-title a:hover,
+.writing-image a:hover {
+  box-shadow: none !important;
+   text-decoration: none;
+}
+
 /* ============================================
    HOME LAYOUT
    ============================================ */
@@ -285,11 +327,14 @@ a:hover {
   align-items: flex-start;
   justify-content: center;
   padding: 0 10%;
-  gap: 1rem;
+  gap: 1arem;
   list-style: none;
   min-width: 0;
   font-size: var(--font-size-base);
 }
+
+
+
 
 /* ============================================
    HOME CAROUSEL
@@ -461,20 +506,23 @@ a:hover {
 
 .project-meta {
   position: fixed;
-  top: 4rem;
+  top: 3rem;
   left: 0;
   width: 25%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0rem;
   font-size: var(--font-size-sm);
-  max-height: calc(55vh - 4rem);
+
   overflow-y: auto;
+  margin-bottom: 1rem;
 }
 
 .project-meta h1 {
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h1);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 6vw, 3rem);
 }
 
 .project-meta a,
@@ -483,7 +531,7 @@ a:hover {
   width: fit-content;
   text-decoration: underline;
   text-decoration-style: wavy;
-  text-decoration-color: white;
+  text-decoration-color: var(--color-nav-bg);
   text-decoration-thickness: 2px;
   padding: 0.3rem;
 }
@@ -516,6 +564,11 @@ a:hover {
   z-index: 50;
   max-height: 40vh;
   overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.meta-divider {
+  height: 1.5rem;
 }
 
 .project-details strong {
@@ -531,6 +584,7 @@ a:hover {
 .project-details a:hover {
   color: var(--color-accent);
   padding: 0.3rem;
+  text-decoration: none;
 }
 
 .project-details .project-tags {
@@ -563,7 +617,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-top: 4rem;
+  padding-top: 1rem;
 }
 
 .project-content img { width: 100%; height: auto; }
@@ -656,6 +710,10 @@ a:hover {
   text-decoration: none;
   -webkit-filter: drop-shadow(0.1rem 0.1rem 0.6rem rgba(119, 56, 114, 0.37));
   filter: drop-shadow(0.1rem 0.1rem 0.6rem rgba(119, 56, 114, 0.37));
+}
+
+.mobile-project-hero {
+  display: none;
 }
 
 /* Content slideshow */
@@ -824,13 +882,13 @@ a:hover {
 }
 
 .project-grid {
-  margin-top: 20rem;
+  margin-top: 15rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0 2rem 4rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
   max-width: 1200px;
 }
 
@@ -838,16 +896,19 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding-bottom: 1rem;
+
 }
 
 .project-card-info p {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-base);
   line-height: 1.4;
 }
 
 .project-card img {
   width: 100%;
-  height: 180px;
+  height: auto;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   flex: none;
   transition: clip-path 0.4s ease, filter 0.3s ease, -webkit-filter 0.3s ease;
@@ -878,7 +939,7 @@ a:hover {
 
 
 .project-card-info h2 {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-h2);
 }
 
 .project-card-info h2:hover {
@@ -896,7 +957,7 @@ a:hover {
 }
 
 .year {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   color: var(--color-text);
   font-style: italic;
 }
@@ -1336,6 +1397,12 @@ body.lightbox-open nav {
   -webkit-filter: none;
   filter: none;
   padding: 0;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
 }
 
 #mobile-nav-close {
@@ -1362,7 +1429,10 @@ body.lightbox-open nav {
   padding: 0;
 }
 
-.mobile-nav-logo {
+
+
+.mobile-nav-logo,
+.mobile-nav-logo:hover {
   font-family: var(--font-heading);
   font-weight: 500;
   text-transform: uppercase;
@@ -1370,12 +1440,12 @@ body.lightbox-open nav {
   color: var(--color-nav-text);
   font-size: 1.2em;
   letter-spacing: 0.05em;
-}
-
-.mobile-nav-logo:hover {
-  background: none;
-  -webkit-filter: none;
-  filter: none;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
 }
 
 .writing-meta-row { display: none; }
@@ -1433,12 +1503,6 @@ body.lightbox-open nav {
 }
 
 @media (max-height: 700px) {
-  .project-meta > p {
-    display: none;
-  }
-  #toc-list {
-    display: none;
-  }
 
     .project-meta {
     max-height: none;
@@ -1448,6 +1512,23 @@ body.lightbox-open nav {
 }
 /* Tablet / mobile */
 @media (max-width: 1200px) {
+
+  .mobile-project-hero {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    margin-top: 2rem;
+  }
+
+  .mobile-project-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(180deg, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  }
+
 
   :root {
     --font-size-h1: 4em;
@@ -1544,20 +1625,27 @@ body.lightbox-open nav {
 
   .toc,
   #toc-list,
-  .toc-label,
-  .project-meta > p {
-    display: none !important;
+  .toc-label {display: none;
+    
   }
 
   .project-meta { order: 1; }
   .project-details { order: 2; margin-top: 0; border-top: none; }
   .project-content { order: 3; }
 
-  .project-meta {
-    position: static;
-    width: 100%;
-    padding: 1rem 0 0.5rem;
-  }
+.project-meta {
+  position: static;
+  width: 100%;
+  padding: 1rem 0 0.5rem;
+  margin-top: -10rem;
+  position: relative;
+  z-index: 2;
+}
+
+.project-meta h1 {
+  font-size: 4rem;
+ 
+}
 
   .project-details {
     position: static;
@@ -1568,13 +1656,13 @@ body.lightbox-open nav {
     margin-top: 2rem;
   }
 
-  .back-link { display: none !important; }
+
 
   .project-content {
     position: static;
     left: 0;
     width: 100%;
-    padding-top: 1.5rem;
+    padding-top: 0rem;
   }
 
   /* Project grid — 3 columns at tablet */
@@ -1589,11 +1677,20 @@ body.lightbox-open nav {
     padding: 2rem 1rem 4rem;
   }
 
-  .project-card img { height: 210px; }
+ .project-card img {
+  aspect-ratio: 4 / 3;
+  height: auto;
+}
+
+ .project-card  {
+padding:1rem ;
+margin-bottom: 2rem;
+}
+
 
   /* Writing table */
   .writing-table {
-    margin-top: 7rem;
+    margin-top: 11rem;
     padding: 0 1rem 4rem;
   }
 
@@ -1734,7 +1831,7 @@ body.lightbox-open nav {
 
   /* Project grid — 2 columns on phones */
   .project-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .right {

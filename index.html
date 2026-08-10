@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> — Hugo Pilate | Design Research & Digital Art</title>
+  <title> Hugo Pilate</title>
   <meta name="description" content="Hugo Pilate — Design researcher and digital artist based in Gothenburg, Sweden." />
   <meta property="og:title" content="Hugo Pilate" />
   <meta property="og:description" content="Design researcher and digital artist based in Gothenburg, Sweden." />
@@ -33,7 +33,9 @@
 
   <nav>
     <ul id="desktop-nav">
-      <li><a href="/">Hugo Pilate</a></li>
+      
+<li id="emoji-nav">🪨</li>
+
       <li><a href="/projects/">Projects</a></li>
       <li><a href="/writing/">Writing</a></li>
       <li><a href="/teaching/">Teaching & Exhibits</a></li>
@@ -113,7 +115,7 @@
      data-index="4"
      data-tags="projects,designresearch,participatorydesign,gamingculture,urbanfutures,spotlight"
      data-url="/projects/counter-twinning-in-gothenburg/">
-  <img src="/assets/img/Screenshot-2024-12-17-170301.png" alt="COUNTER-TWINNING IN GOTHENBURG" class="cluster-img" />
+  <img src="/assets/img/T1_demo.gif" alt="COUNTER-TWINNING IN GOTHENBURG" class="cluster-img" />
   <div class="cluster-overlay"></div>
   <span class="cluster-label">
     <span class="cluster-label-title">COUNTER-TWINNING IN GOTHENBURG</span>
@@ -179,7 +181,7 @@
     </a>
     
     <a href="/projects/counter-twinning-in-gothenburg/" class="carousel-slide ">
-      <img src="/assets/img/Screenshot-2024-12-17-170301.png" alt="COUNTER-TWINNING IN GOTHENBURG" class="carousel-img" />
+      <img src="/assets/img/T1_demo.gif" alt="COUNTER-TWINNING IN GOTHENBURG" class="carousel-img" />
       <div class="carousel-caption">
         <h2>COUNTER-TWINNING IN GOTHENBURG ◆ 2025</h2>
       </div>
@@ -208,14 +210,21 @@
   <h1></h1>
   <p></p>
   <br>
+  <p><a href="/about/" class="title-link"><h2 style="text-align: left; width: 100%;">HUGO PILATE</h2></a></p>
+  <div class="meta-divider"></div>
   <h1>DESIGN RESEARCHER<br>
 & DIGITAL ARTIST</h1>
-<p>Hi, I am Hugo Pilate, a design practitioner with over ten years of experience, currently based in Gothenburg, Sweden. My practice spans <a href="/projects/?tag=designresearch">design consulting</a>, <a href="/projects/?tag=gamingculture">artistic production</a>, and <a href="/teaching/">design education</a>.</p>
-<p>Through each of these, I use design to foster collaborative sensemaking and curiosity, treating every project as an opportunity to reflect on how we shape, and are shaped by, the world around us.</p>
-<p>In 2022, I co-founded an artistic duo with <a href="https://pedrogilfarias.com/" target="_blank" rel="noopener noreferrer">Pedro Gil Farias</a>, <a href="https://whatamess.city/">WHAT A MESS</a>, where we interrogate the representation of urban spaces in video games and other digital mediums.</p>
+<p>I'm a design practitioner with over ten years of experience, currently based in Gothenburg, Sweden. My practice spans <a href="/projects/?tag=designresearch">design consulting</a>, <a href="/projects/?tag=gamingculture">artistic production</a>, and <a href="/teaching/">design education</a>.</p>
+<div class="meta-divider"></div>
+Through each of these, I use design to foster collaborative sensemaking and curiosity, treating every project as an opportunity to reflect on how we shape, and are shaped by, the world around us.  
+<div class="meta-divider"></div>
+In 2022, I co-founded an artistic duo with <a href="https://pedrogilfarias.com/" target="_blank" rel="noopener noreferrer">Pedro Gil Farias</a>, [WHAT A MESS](https://whatamess.city/), where we interrogate the representation of urban spaces in video games and other digital mediums. 
 <p></p>
 <p></p>
+<div class="meta-divider"></div>
+<div class="meta-divider"></div>
 <!-- <strong>Project spotlight:</strong>
+🪨🪱🌿🦑🎮🔮🚃
   - The developement of [🎮 new approaches to digital twinning](/projects/counter-twinning-in-gothenburg//) in Gothenburg and wrote about it [here](https://gupea.ub.gu.se/items/07921d88-13fc-46f2-8ca3-df36e2742c78).
   - The curation of [🔮 virtual co-creation spaces](/projects/CDV/) for future urban developments for [Redman Associates](https://www.redman.fr/) and [Fabbula](https://fabbula.com/)
   - The co-production of an EU-funded [🦑 playbook on worldbuilding](/projects/turfuplaybook/) for young adults"
@@ -365,6 +374,30 @@
   </div>
 
   <script>
+  // ============================================
+    // RANDOM EMOJI NAV + FAVICON
+    // ============================================
+    const emojis = ['🪨', '🪱', '🌿', '🦑', '🗺️', '☕','🪸','🧺', '🐘', '🎮', '🔮', '🚃'];
+    const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+    // Set nav item
+    const emojiNav = document.getElementById('emoji-nav');
+    if (emojiNav) emojiNav.textContent = emoji;
+
+    // Set favicon
+    const canvas = document.createElement('canvas');
+    canvas.width = 32;
+    canvas.height = 32;
+    const ctx = canvas.getContext('2d');
+    ctx.font = '28px serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(emoji, 16, 16);
+    const link = document.querySelector("link[rel='icon']") || document.createElement('link');
+    link.rel = 'icon';
+    link.href = canvas.toDataURL('image/png');
+    document.head.appendChild(link);
+
     // ============================================
     // SWIPE GESTURES
     // ============================================
@@ -440,6 +473,50 @@
     // PROJECT CLUSTER
     // ============================================
   const cluster = document.getElementById('project-cluster');
+
+  const supportsShape = CSS.supports('clip-path', 'shape(from 0% 0%)');
+
+    const FALLBACK_RADII = [
+      '60% 40% 55% 45% / 45% 55% 40% 60%',
+      '40% 60% 45% 55% / 55% 45% 60% 40%',
+      '55% 45% 40% 60% / 40% 60% 55% 45%',
+      '45% 55% 60% 40% / 60% 40% 45% 55%',
+      '60% 40% 50% 50% / 50% 50% 40% 60%',
+      '50% 50% 45% 55% / 55% 45% 50% 50%',
+      '40% 60% 55% 45% / 45% 55% 60% 40%',
+    ];
+
+    function generateBlob(seed, blobiness, tension) {
+      let s = seed;
+      function rand(min, max) {
+        s = (s * 16807 + 0) % 2147483647;
+        return min + (s / 2147483647) * (max - min);
+      }
+      const cx = 50, cy = 50, baseR = 42, numPoints = 10;
+      const points = [];
+      for (let i = 0; i < numPoints; i++) {
+        const angle = (i / numPoints) * Math.PI * 2;
+        const r = baseR + rand(-blobiness, blobiness);
+        points.push({ x: cx + Math.cos(angle) * r, y: cy + Math.sin(angle) * r });
+      }
+      const n = points.length;
+      let path = `from ${points[0].x.toFixed(2)}% ${points[0].y.toFixed(2)}%`;
+      for (let i = 0; i < n; i++) {
+        const curr = points[i];
+        const next = points[(i + 1) % n];
+        const prev = points[(i - 1 + n) % n];
+        const after = points[(i + 2) % n];
+        const c1x = curr.x + (next.x - prev.x) * tension;
+        const c1y = curr.y + (next.y - prev.y) * tension;
+        const c2x = next.x - (after.x - curr.x) * tension;
+        const c2y = next.y - (after.y - curr.y) * tension;
+        path += `,curve to ${next.x.toFixed(2)}% ${next.y.toFixed(2)}% with ${c1x.toFixed(2)}% ${c1y.toFixed(2)}% / ${c2x.toFixed(2)}% ${c2y.toFixed(2)}%`;
+      }
+      return `shape(${path})`;
+    }
+
+    const BLOB_STATIC = { blobiness: 6, tension: 0.15 };
+    const BLOB_HOVER  = { blobiness: 8, tension: 0.30 };
 
     if (cluster && !isSafari) {
       const BASE_W      = 250;
