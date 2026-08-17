@@ -15,7 +15,9 @@ I'm a design practitioner with over ten years of experience, currently based in 
 <div class="meta-divider"></div>
 Through each of these, I use design to foster collaborative sensemaking and curiosity, treating every project as an opportunity to reflect on how we shape, and are shaped by, the world around us.  
 <div class="meta-divider"></div>
-In 2022, I co-founded an artistic duo with Pedro Gil Farias, [WHAT A MESS](https://whatamess.city/), where we interrogate the representation of urban spaces in video games and other digital mediums. 
+ 
+
+In 2022, I co-founded [WHAT A MESS](https://whatamess.city/), with Pedro Gil Farias, an artistic duo where we interrogate the representation of urban spaces in video games and other digital mediums.
 
 
 <p></p>
